@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Public+Sans:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme inline {
+  --color-brand: #001764;
+  --color-on-primary: #ffffff;
+  --color-brand-2: #002897;
+  --color-accent: #d4af37;
+  /* Warm neutrals / off-whites (no green cast) */
+  --color-page: #f8f5f0;
+  --color-surface-low: #f2ede6;
+  --color-surface-high: #e8e2d9;
+  --color-surface: #ffffff;
+  --color-ink: #1c1917;
+  --color-muted: #45474c;
+  --color-line: color-mix(in oklab, #c5c6cd 20%, transparent);
+  --color-chip: #d9e3f9;
+  --color-tertiary-container: #cba72f;
+  --color-on-tertiary-container: #4e3d00;
+  --color-secondary-fixed: #d9e3f9;
+  --color-on-secondary-fixed: #121c2c;
+  --color-primary-fixed: #dde1ff;
+  --color-on-primary-fixed: #001356;
+  --color-primary-fixed-dim: #b9c3ff;
+  --font-sans: "Public Sans", Arial, Helvetica, sans-serif;
+  --font-heading: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-primary-fixed);
+  color: var(--color-on-primary-fixed);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.glass-nav {
+  background: color-mix(in oklab, var(--color-page) 84%, white 16%);
+  backdrop-filter: blur(12px);
+}
+
+.surface-low {
+  background: var(--color-surface-low);
+}
+
+.surface-high {
+  background: var(--color-surface-high);
+}
+
+.card-tonal {
+  background: var(--color-surface);
+  box-shadow: 0 24px 24px -4px rgba(28, 25, 22, 0.06);
+}
+
+.primary-btn {
+  background-image: linear-gradient(135deg, var(--color-brand), var(--color-brand-2));
+  color: #fff;
+  border-radius: 0.5rem;
+}
+
+.secondary-btn {
+  background: var(--color-tertiary-container);
+  color: var(--color-on-tertiary-container);
+  border-radius: 0.5rem;
+}
+
+.ghost-btn {
+  color: var(--color-brand);
+  border-radius: 0.5rem;
+}
+
+.ghost-btn:hover {
+  background: color-mix(in oklab, var(--color-surface-low) 78%, white 22%);
+}
+
+.input-ghost {
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+}
+
+.tonal-shift-bottom {
+  box-shadow: 0 4px 30px -10px rgba(0, 23, 100, 0.05);
+}
+
+.tonal-stacking-top {
+  border-top: 1px solid rgba(197, 198, 205, 0.1);
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined", sans-serif;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-size: 1.35rem;
+  line-height: 1;
+}

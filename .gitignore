@@ -1,0 +1,27 @@
+# Dependencies & build artifacts
+**/node_modules/
+**/.output/
+**/dist/
+**/dist-ssr/
+**/.next/
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# TanStack / Nitro / Vite
+.nitro
+.tanstack
+.wrangler
+.vinxi
+__unconfig*
+
+# OS
+.DS_Store
+
+# Large legacy Next.js backup (not needed in repo)
+website-next.bak/
+
+*.log
