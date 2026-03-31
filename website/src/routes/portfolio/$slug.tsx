@@ -1,4 +1,5 @@
 import { Link, createFileRoute, redirect } from "@tanstack/react-router";
+import { publicAsset } from "#/lib/baseUrl";
 import { getCaseStudy } from "#/lib/portfolio";
 
 export const Route = createFileRoute("/portfolio/$slug")({
@@ -40,7 +41,7 @@ function CaseStudyPage() {
     <article className="pb-16">
       <section className="relative">
         <div className="relative h-[420px] overflow-hidden sm:h-[520px]">
-          <img src={c.afterSrc} alt={`${c.title} hero`} className="h-full w-full object-cover" />
+          <img src={publicAsset(c.afterSrc)} alt={`${c.title} hero`} className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,23,100,0.18)_0%,rgba(0,23,100,0.62)_68%,rgba(0,23,100,0.82)_100%)]" />
           <div className="absolute inset-x-0 bottom-0 mx-auto w-full max-w-6xl px-4 pb-10 sm:px-6">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/80">Before and after project</p>
@@ -112,10 +113,10 @@ function CaseStudyPage() {
 
         <div className="mt-8 grid gap-5 lg:grid-cols-[1fr_1.35fr]">
           <figure className="card-tonal overflow-hidden rounded-xl">
-            <img src={c.beforeSrc} alt={`${c.title} before`} className="h-full w-full object-cover grayscale-[35%]" />
+            <img src={publicAsset(c.beforeSrc)} alt={`${c.title} before`} className="h-full w-full object-cover grayscale-[35%]" />
           </figure>
           <figure className="card-tonal overflow-hidden rounded-xl">
-            <img src={c.afterSrc} alt={`${c.title} after`} className="h-full w-full object-cover" />
+            <img src={publicAsset(c.afterSrc)} alt={`${c.title} after`} className="h-full w-full object-cover" />
           </figure>
         </div>
       </section>

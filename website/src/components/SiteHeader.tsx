@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
+import { publicAsset } from "#/lib/baseUrl";
 import { mainNavItems } from "#/lib/site";
 
 const navLinkBase =
@@ -18,7 +19,7 @@ export function SiteHeader() {
           onClick={() => setMobileOpen(false)}
         >
           <img
-            src="/images/logo.png"
+            src={publicAsset("/images/logo.png")}
             alt="Restyled spaces NZ"
             width={140}
             height={56}

@@ -1,4 +1,5 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
+import { publicAsset } from "#/lib/baseUrl";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -24,7 +25,7 @@ function AboutPage() {
       </p>
       <div className="card-tonal relative mt-10 aspect-[16/10] overflow-hidden rounded-2xl">
         <img
-          src="/images/julie-styling.jpg"
+          src={publicAsset("/images/julie-styling.jpg")}
           alt="Julie working on styling a bedroom"
           className="absolute inset-0 h-full w-full object-cover"
         />

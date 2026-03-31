@@ -1,5 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { BeforeAfterSlider } from "#/components/BeforeAfterSlider";
+import { publicAsset } from "#/lib/baseUrl";
 import { caseStudies } from "#/lib/portfolio";
 import { site } from "#/lib/site";
 
@@ -51,7 +52,7 @@ function HomePage() {
           <div className="relative w-full flex-1">
             <div className="relative z-20 translate-x-2 translate-y-2 overflow-hidden rounded-2xl shadow-2xl sm:translate-x-4 sm:translate-y-4">
               <img
-                src="/images/hero-living.png"
+                src={publicAsset("/images/hero-living.png")}
                 alt="Warmly styled living room with neutral sofa and natural light"
                 className="aspect-[4/5] w-full object-cover"
                 fetchPriority="high"
@@ -76,8 +77,8 @@ function HomePage() {
           </div>
           <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
             <BeforeAfterSlider
-              beforeSrc={featured.beforeSrc}
-              afterSrc={featured.afterSrc}
+              beforeSrc={publicAsset(featured.beforeSrc)}
+              afterSrc={publicAsset(featured.afterSrc)}
               beforeAlt="Bedroom before restyling"
               afterAlt="Bedroom after restyling"
               label="Bedroom transformation"
@@ -137,7 +138,7 @@ function HomePage() {
           <div className="relative w-full flex-1">
             <div className="aspect-[3/4] overflow-hidden rounded-2xl shadow-2xl grayscale transition-all duration-700 hover:grayscale-0">
               <img
-                src="/images/julie-styling.jpg"
+                src={publicAsset("/images/julie-styling.jpg")}
                 alt="Julie — lead stylist"
                 className="h-full w-full object-cover"
               />

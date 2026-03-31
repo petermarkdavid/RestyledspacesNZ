@@ -1,4 +1,5 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
+import { publicAsset } from "#/lib/baseUrl";
 import { caseStudies } from "#/lib/portfolio";
 
 export const Route = createFileRoute("/portfolio/")({
@@ -29,7 +30,7 @@ function PortfolioPage() {
             <Link to={`/portfolio/${c.slug}`} className="group block">
               <div className="card-tonal relative aspect-[4/3] overflow-hidden rounded-2xl transition group-hover:shadow-md">
                 <img
-                  src={c.coverSrc}
+                  src={publicAsset(c.coverSrc)}
                   alt={c.title}
                   className="h-full w-full object-cover transition group-hover:scale-[1.02]"
                 />
