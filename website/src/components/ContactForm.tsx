@@ -54,7 +54,7 @@ export function ContactForm() {
   if (status === "success") {
     return (
       <div className="card-tonal rounded-2xl p-8" role="status">
-        <p className="font-heading text-lg font-semibold text-brand">Thanks — your message is on its way.</p>
+        <p className="font-heading text-lg font-semibold text-brand-2">Thanks — your message is on its way.</p>
         <p className="mt-2 text-sm text-muted">
           We&apos;ll get back to you shortly. If you need to add photos, reply to our email and attach them
           there.
@@ -69,7 +69,7 @@ export function ContactForm() {
         aria-labelledby="contact-section-contact"
         className="card-tonal min-w-0 space-y-4 rounded-2xl border-0 p-6"
       >
-        <h3 id="contact-section-contact" className="font-heading text-sm font-semibold text-brand">
+        <h3 id="contact-section-contact" className="font-heading text-sm font-semibold text-brand-2">
           01 — Contact details
         </h3>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -79,7 +79,7 @@ export function ContactForm() {
               name="name"
               required
               autoComplete="name"
-              className="input-ghost mt-1 w-full rounded-lg px-3 py-2 text-ink outline-none ring-brand/30 focus:ring-2"
+              className="input-ghost mt-1 w-full rounded-lg px-3 py-2 text-ink outline-none ring-brand-2/30 focus:ring-2"
             />
           </label>
           <label className="block text-sm font-medium text-ink">
@@ -89,7 +89,7 @@ export function ContactForm() {
               type="email"
               required
               autoComplete="email"
-              className="input-ghost mt-1 w-full rounded-lg px-3 py-2 text-ink outline-none ring-brand/30 focus:ring-2"
+              className="input-ghost mt-1 w-full rounded-lg px-3 py-2 text-ink outline-none ring-brand-2/30 focus:ring-2"
             />
           </label>
           <label className="block text-sm font-medium text-ink sm:col-span-2">
@@ -98,7 +98,7 @@ export function ContactForm() {
               name="phone"
               type="tel"
               autoComplete="tel"
-              className="input-ghost mt-1 w-full rounded-lg px-3 py-2 text-ink outline-none ring-brand/30 focus:ring-2"
+              className="input-ghost mt-1 w-full rounded-lg px-3 py-2 text-ink outline-none ring-brand-2/30 focus:ring-2"
             />
           </label>
         </div>
@@ -108,7 +108,7 @@ export function ContactForm() {
         aria-labelledby="contact-section-project"
         className="card-tonal min-w-0 space-y-4 rounded-2xl border-0 p-6"
       >
-        <h3 id="contact-section-project" className="font-heading text-sm font-semibold text-brand">
+        <h3 id="contact-section-project" className="font-heading text-sm font-semibold text-brand-2">
           02 — Project details
         </h3>
         <div className="grid gap-6 sm:grid-cols-2">
@@ -116,11 +116,11 @@ export function ContactForm() {
             <p className="text-sm font-medium text-ink">Client type</p>
             <div className="mt-2 flex flex-wrap gap-3">
               <label className="inline-flex items-center gap-2 rounded-full bg-chip px-3 py-1 text-sm text-ink">
-                <input type="radio" name="clientType" value="homeowner" defaultChecked className="text-brand" />
+                <input type="radio" name="clientType" value="homeowner" defaultChecked className="accent-brand-2" />
                 Homeowner
               </label>
               <label className="inline-flex items-center gap-2 rounded-full bg-chip px-3 py-1 text-sm text-ink">
-                <input type="radio" name="clientType" value="agent" className="text-brand" />
+                <input type="radio" name="clientType" value="agent" className="accent-brand-2" />
                 Real estate agent
               </label>
             </div>
@@ -129,11 +129,11 @@ export function ContactForm() {
             <p className="text-sm font-medium text-ink">Location</p>
             <div className="mt-2 flex flex-wrap gap-3">
               <label className="inline-flex items-center gap-2 rounded-full bg-chip px-3 py-1 text-sm text-ink">
-                <input type="radio" name="location" value="wellington" defaultChecked className="text-brand" />
+                <input type="radio" name="location" value="wellington" defaultChecked className="accent-brand-2" />
                 Wellington (in person)
               </label>
               <label className="inline-flex items-center gap-2 rounded-full bg-chip px-3 py-1 text-sm text-ink">
-                <input type="radio" name="location" value="online" className="text-brand" />
+                <input type="radio" name="location" value="online" className="accent-brand-2" />
                 Online
               </label>
             </div>
@@ -145,7 +145,7 @@ export function ContactForm() {
             name="serviceType"
             required
             defaultValue=""
-            className="input-ghost mt-1 w-full rounded-lg px-3 py-2 text-ink outline-none ring-brand/30 focus:ring-2"
+            className="input-ghost mt-1 w-full rounded-lg px-3 py-2 text-ink outline-none ring-brand-2/30 focus:ring-2"
           >
             {serviceOptions.map((o) => (
               <option key={o.value || "placeholder"} value={o.value} disabled={o.value === ""}>
@@ -161,7 +161,7 @@ export function ContactForm() {
             required
             rows={3}
             placeholder="e.g. 3-bedroom home, main living + master, listing in 3 weeks"
-            className="input-ghost mt-1 w-full rounded-lg px-3 py-2 text-ink outline-none ring-brand/30 focus:ring-2"
+            className="input-ghost mt-1 w-full rounded-lg px-3 py-2 text-ink outline-none ring-brand-2/30 focus:ring-2"
           />
         </label>
       </fieldset>
@@ -170,7 +170,7 @@ export function ContactForm() {
         aria-labelledby="contact-section-context"
         className="card-tonal min-w-0 space-y-4 rounded-2xl border-0 p-6"
       >
-        <h3 id="contact-section-context" className="font-heading text-sm font-semibold text-brand">
+        <h3 id="contact-section-context" className="font-heading text-sm font-semibold text-brand-2">
           03 — More context (optional)
         </h3>
         <label className="block text-sm font-medium text-ink">
@@ -179,7 +179,7 @@ export function ContactForm() {
             name="message"
             rows={5}
             placeholder="Anything else we should know—goals, constraints, access?"
-            className="input-ghost mt-1 w-full rounded-lg px-3 py-2 text-ink outline-none ring-brand/30 focus:ring-2"
+            className="input-ghost mt-1 w-full rounded-lg px-3 py-2 text-ink outline-none ring-brand-2/30 focus:ring-2"
           />
         </label>
         <p className="text-xs text-muted">

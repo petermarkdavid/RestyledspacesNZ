@@ -35,11 +35,11 @@ function PortfolioPage() {
                   className="h-full w-full object-cover transition group-hover:scale-[1.02]"
                 />
               </div>
-              <h2 className="font-heading mt-4 text-xl font-semibold text-brand group-hover:underline">
+              <h2 className="font-heading mt-4 text-xl font-semibold text-brand-2 group-hover:underline">
                 {c.title}
               </h2>
               <p className="mt-2 text-sm text-muted">{c.excerpt}</p>
-              <span className="mt-2 inline-block text-sm font-semibold text-brand">View case study →</span>
+              <span className="mt-2 inline-block text-sm font-semibold text-brand-2">View case study →</span>
             </Link>
           </li>
         ))}

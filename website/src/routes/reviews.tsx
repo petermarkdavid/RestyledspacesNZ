@@ -31,7 +31,7 @@ function ReviewsPage() {
               href={facebookHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-brand hover:underline"
+              className="font-semibold text-brand-2 hover:underline"
             >
               {facebookReviewsSummary}
             </a>
@@ -62,7 +62,7 @@ function ReviewsPage() {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-brand hover:underline"
+              className="font-semibold text-brand-2 hover:underline"
             >
               {link.label}
             </a>

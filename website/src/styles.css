@@ -1,12 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Public+Sans:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Header wordmark: Century Gothic **Bold** (weight 700). Tries local Windows/macOS names, then optional licensed WOFF2. */
+@font-face {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    local("Century Gothic Bold"),
+    local("CenturyGothic-Bold"),
+    url("/fonts/CenturyGothic-Bold.woff2") format("woff2");
+}
+
 @theme inline {
-  --color-brand: #001764;
-  --color-on-primary: #ffffff;
-  --color-brand-2: #002897;
-  --color-accent: #d4af37;
+  /* Main = yellow, secondary = blue (use brand-2 for text on light backgrounds — yellow fails contrast on white/cream) */
+  --color-brand: #ecdf15;
+  --color-brand-2: #1d44cd;
+  --color-on-primary: #1c1917;
+  --color-accent: #1d44cd;
   /* Warm neutrals / off-whites (no green cast) */
   --color-page: #f8f5f0;
   --color-surface-low: #f2ede6;
@@ -15,16 +27,19 @@
   --color-ink: #1c1917;
   --color-muted: #45474c;
   --color-line: color-mix(in oklab, #c5c6cd 20%, transparent);
-  --color-chip: #d9e3f9;
-  --color-tertiary-container: #cba72f;
-  --color-on-tertiary-container: #4e3d00;
-  --color-secondary-fixed: #d9e3f9;
-  --color-on-secondary-fixed: #121c2c;
-  --color-primary-fixed: #dde1ff;
-  --color-on-primary-fixed: #001356;
-  --color-primary-fixed-dim: #b9c3ff;
-  --font-sans: "Public Sans", Arial, Helvetica, sans-serif;
-  --font-heading: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
+  --color-chip: color-mix(in oklab, #1d44cd 14%, white);
+  --color-tertiary-container: #ecdf15;
+  --color-on-tertiary-container: #1c1917;
+  --color-secondary-fixed: #e8ecfc;
+  --color-on-secondary-fixed: #1d44cd;
+  --color-primary-fixed: #f5f2a8;
+  --color-on-primary-fixed: #1c1917;
+  --color-primary-fixed-dim: #4a4f6b;
+  --font-sans: Arial, Helvetica, sans-serif;
+  /* Headings use the same stack as body; only the header wordmark uses Century Gothic Bold */
+  --font-heading: Arial, Helvetica, sans-serif;
+  /* Wordmark stack (bold via @font-face above + font-weight: 700 on .font-wordmark) */
+  --font-wordmark: "Century Gothic", CenturyGothic, "Apple Gothic", "Trebuchet MS", "URW Gothic L", sans-serif;
 }
 
 body {
@@ -41,7 +56,21 @@ body {
 
 .font-heading {
   font-family: var(--font-heading);
-  letter-spacing: -0.02em;
+}
+
+.font-wordmark {
+  font-family: var(--font-wordmark);
+  letter-spacing: 0.01em;
+  font-weight: 700;
+}
+
+/* translogo.png: dark line-art on transparent → brand yellow; avoids mask-image bugs (solid fill) */
+.logo-mark-img {
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  filter: brightness(0) saturate(100%) invert(92%) sepia(95%) saturate(900%) hue-rotate(12deg) brightness(1.03)
+    contrast(1.02);
 }
 
 .sr-only {
@@ -75,19 +104,20 @@ body {
 }
 
 .primary-btn {
-  background-image: linear-gradient(135deg, var(--color-brand), var(--color-brand-2));
-  color: #fff;
+  background: var(--color-brand);
+  color: var(--color-ink);
   border-radius: 0.5rem;
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--color-ink) 10%, transparent);
 }
 
 .secondary-btn {
-  background: var(--color-tertiary-container);
-  color: var(--color-on-tertiary-container);
+  background: var(--color-brand-2);
+  color: #ffffff;
   border-radius: 0.5rem;
 }
 
 .ghost-btn {
-  color: var(--color-brand);
+  color: var(--color-brand-2);
   border-radius: 0.5rem;
 }
 
@@ -101,7 +131,7 @@ body {
 }
 
 .tonal-shift-bottom {
-  box-shadow: 0 4px 30px -10px rgba(0, 23, 100, 0.05);
+  box-shadow: 0 4px 30px -10px rgba(29, 68, 205, 0.08);
 }
 
 .tonal-stacking-top {

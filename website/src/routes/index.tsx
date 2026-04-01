@@ -27,7 +27,7 @@ function HomePage() {
             <span className="inline-block rounded-full bg-secondary-fixed px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-on-secondary-fixed">
               Styling and staging specialists
             </span>
-            <h1 className="font-heading text-5xl font-extrabold leading-[1.1] tracking-tight text-brand md:text-6xl lg:text-7xl">
+            <h1 className="font-heading text-5xl font-extrabold leading-[1.1] tracking-tight text-brand-2 md:text-6xl lg:text-7xl">
               Home staging to sell or restyling to love the space you're in
             </h1>
             <p className="max-w-xl text-lg leading-relaxed text-muted md:text-xl">
@@ -71,7 +71,7 @@ function HomePage() {
       <section className="surface-low overflow-hidden px-4 py-16 sm:px-8 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center md:mb-16 md:text-left">
-            <h2 className="font-heading mb-4 text-4xl font-bold text-brand md:text-5xl">The Magic of Restyling</h2>
+            <h2 className="font-heading mb-4 text-4xl font-bold text-brand-2 md:text-5xl">The Magic of Restyling</h2>
             <p className="mx-auto max-w-2xl text-lg text-muted md:mx-0">
               See how we breathe new life into rooms using the same pieces you already love.
             </p>
@@ -97,7 +97,7 @@ function HomePage() {
             />
             <div className="space-y-6">
               <div className="rounded-2xl bg-surface p-8 tonal-shift-bottom">
-                <h3 className="font-heading mb-4 text-2xl font-bold text-brand">Intentional Arrangement</h3>
+                <h3 className="font-heading mb-4 text-2xl font-bold text-brand-2">Intentional Arrangement</h3>
                 <p className="leading-relaxed text-muted">
                   We don&apos;t just move furniture; we create flow. By understanding the bones of your home and
                   your lifestyle, we curate a space that feels both fresh and familiar—using staging and styling
@@ -106,16 +106,16 @@ function HomePage() {
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="surface-high rounded-2xl p-6">
-                  <div className="font-heading mb-2 text-3xl font-bold text-brand">200+</div>
+                  <div className="font-heading mb-2 text-3xl font-bold text-brand-2">200+</div>
                   <div className="text-xs font-medium uppercase tracking-wider text-muted">Rooms transformed</div>
                 </div>
                 <div className="surface-high rounded-2xl p-6">
-                  <div className="font-heading mb-2 text-3xl font-bold text-brand">0</div>
+                  <div className="font-heading mb-2 text-3xl font-bold text-brand-2">0</div>
                   <div className="text-xs font-medium uppercase tracking-wider text-muted">Happy clients</div>
                 </div>
               </div>
               <p className="text-sm text-muted">
-                <Link to={`/portfolio/${featured.slug}`} className="font-semibold text-brand hover:underline">
+                <Link to={`/portfolio/${featured.slug}`} className="font-semibold text-brand-2 hover:underline">
                   Open full case study
                 </Link>
               </p>
@@ -128,7 +128,7 @@ function HomePage() {
       <section className="bg-page px-4 py-16 sm:px-8 md:py-24">
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-14 md:flex-row-reverse md:gap-20">
           <div className="flex-1 space-y-6">
-            <h2 className="font-heading text-4xl font-bold leading-tight text-brand md:text-5xl">Meet Julie</h2>
+            <h2 className="font-heading text-4xl font-bold leading-tight text-brand-2 md:text-5xl">Meet Julie</h2>
             <p className="text-lg leading-relaxed text-muted">
               Hi, I&apos;m Julie. I believe that every home has a &ldquo;soul&rdquo; that often gets buried
               under the clutter of everyday life. My mission is to uncover the beauty in what you already own.
@@ -167,14 +167,14 @@ function HomePage() {
       {/* Client voices */}
       <section className="surface-low px-4 py-16 sm:px-8 md:py-20">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-widest text-brand/80">{facebookReviewsSummary}</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-2/80">{facebookReviewsSummary}</p>
           <blockquote className="font-heading mt-4 text-xl font-semibold leading-snug text-ink sm:text-2xl">
             &ldquo;{featuredTestimonialQuote}&rdquo;
           </blockquote>
           <p className="mt-4 text-sm font-medium text-muted">— {featuredTestimonialAttribution}</p>
           <Link
             to="/reviews"
-            className="mt-6 inline-block text-sm font-semibold text-brand hover:underline"
+            className="mt-6 inline-block text-sm font-semibold text-brand-2 hover:underline"
           >
             Read all client reviews
           </Link>
@@ -187,12 +187,12 @@ function HomePage() {
           <h2 className="font-heading text-4xl font-bold tracking-tight text-on-primary md:text-5xl lg:text-6xl">
             Ready to rediscover your home?
           </h2>
-          <p className="mx-auto max-w-2xl text-xl text-primary-fixed-dim/90">
+          <p className="mx-auto max-w-2xl text-xl text-on-primary/80">
             Book a consultation and see your space through new eyes—Wellington in person or online NZ-wide.
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center justify-center rounded-lg bg-surface px-10 py-5 text-xl font-extrabold text-brand shadow-2xl transition hover:bg-secondary-fixed"
+            className="inline-flex items-center justify-center rounded-lg bg-surface px-10 py-5 text-xl font-extrabold text-brand-2 shadow-2xl transition hover:bg-secondary-fixed"
           >
             Request a Consultation
           </Link>

@@ -30,7 +30,7 @@ function CaseStudyPage() {
     return (
       <div className="mx-auto max-w-3xl px-4 py-20 text-center">
         <h1 className="font-heading text-2xl font-bold text-ink">Case study not found</h1>
-        <Link to="/portfolio" className="mt-6 inline-block font-semibold text-brand hover:underline">
+        <Link to="/portfolio" className="mt-6 inline-block font-semibold text-brand-2 hover:underline">
           Back to portfolio
         </Link>
       </div>
@@ -81,11 +81,11 @@ function CaseStudyPage() {
               <p className="mt-3 text-sm leading-6 text-muted">{c.outcome}</p>
               <div className="mt-5 grid grid-cols-2 gap-3">
                 <div className="surface-low rounded-lg p-3">
-                  <p className="text-2xl font-bold text-brand">14</p>
+                  <p className="text-2xl font-bold text-brand-2">14</p>
                   <p className="text-[11px] uppercase tracking-wide text-muted">Days to style</p>
                 </div>
                 <div className="surface-low rounded-lg p-3">
-                  <p className="text-2xl font-bold text-brand">85%</p>
+                  <p className="text-2xl font-bold text-brand-2">85%</p>
                   <p className="text-[11px] uppercase tracking-wide text-muted">Fewer new purchases</p>
                 </div>
               </div>
@@ -123,8 +123,8 @@ function CaseStudyPage() {
 
       <section className="surface-low">
         <div className="mx-auto max-w-6xl px-4 py-14 text-center sm:px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand/70">Final insight</p>
-          <h2 className="font-heading mt-3 text-4xl font-bold leading-tight text-brand sm:text-5xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-2/70">Final insight</p>
+          <h2 className="font-heading mt-3 text-4xl font-bold leading-tight text-brand-2 sm:text-5xl">
             Restyling is about the details.
             <span className="block text-muted">It&apos;s where life happens.</span>
           </h2>

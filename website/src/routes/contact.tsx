@@ -30,12 +30,12 @@ function ContactPage() {
           </p>
           <p className="mt-4 text-sm text-muted">
             Email:{" "}
-            <a href={`mailto:${site.email}`} className="font-semibold text-brand hover:underline">
+            <a href={`mailto:${site.email}`} className="font-semibold text-brand-2 hover:underline">
               {site.email}
             </a>
           </p>
           <div className="surface-high mt-10 rounded-2xl p-6">
-            <h2 className="font-heading text-sm font-semibold text-brand">What to expect next</h2>
+            <h2 className="font-heading text-sm font-semibold text-brand-2">What to expect next</h2>
             <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm text-muted">
               <li>We review your details (usually within 1–2 business days).</li>
               <li>We confirm the best next step—visit, call, or online session.</li>

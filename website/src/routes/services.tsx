@@ -27,7 +27,7 @@ function ServicesPage() {
 
       <div className="mt-12 grid gap-8 lg:grid-cols-2">
         <article id="sell" className="card-tonal rounded-2xl p-8">
-          <h2 className="font-heading text-xl font-bold text-brand">Home staging &amp; styling to sell</h2>
+          <h2 className="font-heading text-xl font-bold text-brand-2">Home staging &amp; styling to sell</h2>
           <p className="mt-3 text-muted">
             Prepare your home for photography and open homes using your furniture and décor. We focus on flow,
             light, and a clear story for buyers—so the space feels spacious and easy to imagine living in.
@@ -39,7 +39,7 @@ function ServicesPage() {
           </ul>
         </article>
         <article id="stay" className="surface-high rounded-2xl p-8">
-          <h2 className="font-heading text-xl font-bold text-brand">Restyling to stay</h2>
+          <h2 className="font-heading text-xl font-bold text-brand-2">Restyling to stay</h2>
           <p className="mt-3 text-muted">
             Love the space you&apos;re in: clearer layout, calmer layers, and smarter use of rooms. We can
             recommend selective purchases where they&apos;ll make the biggest impact.
@@ -55,21 +55,21 @@ function ServicesPage() {
       <h2 className="font-heading mt-16 text-2xl font-bold text-ink">Supporting services</h2>
       <div className="mt-8 grid gap-6 md:grid-cols-3">
         <div className="surface-low rounded-2xl p-6">
-          <h3 className="font-heading font-semibold text-brand">Decluttering guidance</h3>
+          <h3 className="font-heading font-semibold text-brand-2">Decluttering guidance</h3>
           <p className="mt-2 text-sm text-muted">
             What to pack away, what to keep, and how to create breathing room—especially when you&apos;re
             still living in the home.
           </p>
         </div>
         <div className="surface-low rounded-2xl p-6">
-          <h3 className="font-heading font-semibold text-brand">Advice for renovators</h3>
+          <h3 className="font-heading font-semibold text-brand-2">Advice for renovators</h3>
           <p className="mt-2 text-sm text-muted">
             Interiors guidance while you plan or mid-project—so finishes and layout support how you actually
             live.
           </p>
         </div>
         <div className="surface-low rounded-2xl p-6">
-          <h3 className="font-heading font-semibold text-brand">Online consultations</h3>
+          <h3 className="font-heading font-semibold text-brand-2">Online consultations</h3>
           <p className="mt-2 text-sm text-muted">
             DIY-friendly support for clients anywhere: video walk-throughs, clear priorities, and actionable
             next steps.
@@ -82,7 +82,7 @@ function ServicesPage() {
         <p className="mt-2 text-muted">
           Details about deposits, milestones, and payment options will be confirmed with your quote. Ask when
           you{" "}
-          <Link to="/contact" className="font-semibold text-brand hover:underline">
+          <Link to="/contact" className="font-semibold text-brand-2 hover:underline">
             request a consultation
           </Link>
           .

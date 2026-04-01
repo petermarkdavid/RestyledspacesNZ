@@ -73,7 +73,7 @@ export function BeforeAfterSlider({
         />
       </div>
       <div className="flex items-center justify-between gap-4 bg-surface p-6">
-        <span className="text-sm font-bold uppercase tracking-widest text-brand">{label}</span>
+        <span className="text-sm font-bold uppercase tracking-widest text-brand-2">{label}</span>
         <span className="text-xs italic text-muted">{hint}</span>
       </div>
     </div>

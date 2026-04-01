@@ -45,14 +45,14 @@ function FaqPage() {
       <dl className="mt-12 space-y-10">
         {faqs.map((item) => (
           <div key={item.q}>
-            <dt className="font-heading text-lg font-semibold text-brand">{item.q}</dt>
+            <dt className="font-heading text-lg font-semibold text-brand-2">{item.q}</dt>
             <dd className="mt-2 text-muted">{item.a}</dd>
           </div>
         ))}
       </dl>
       <p className="mt-14 text-muted">
         Still unsure?{" "}
-        <Link to="/contact" className="font-semibold text-brand hover:underline">
+        <Link to="/contact" className="font-semibold text-brand-2 hover:underline">
           Get in touch
         </Link>{" "}
         and we&apos;ll point you in the right direction.

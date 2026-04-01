@@ -27,19 +27,19 @@ export function SiteFooter() {
             href={socialLinks.find((l) => l.label === "Facebook")?.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-colors hover:text-brand"
+            className="transition-colors hover:text-brand-2"
             aria-label="Facebook"
           >
             <Facebook className="h-5 w-5" strokeWidth={1.75} />
           </a>
-          <a href={`mailto:${site.email}`} className="transition-colors hover:text-brand" aria-label="Email">
+          <a href={`mailto:${site.email}`} className="transition-colors hover:text-brand-2" aria-label="Email">
             <Mail className="h-5 w-5" strokeWidth={1.75} />
           </a>
           <a
             href={socialLinks.find((l) => l.label === "Google Maps")?.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-colors hover:text-brand"
+            className="transition-colors hover:text-brand-2"
             aria-label="Location"
           >
             <MapPin className="h-5 w-5" strokeWidth={1.75} />
