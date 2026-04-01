@@ -25,13 +25,13 @@ function HomePage() {
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-12 md:flex-row md:gap-16">
           <div className="z-10 flex-1 space-y-8">
             <span className="inline-block rounded-full bg-secondary-fixed px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-on-secondary-fixed">
-              The Curated Sanctuary
+              Styling and staging specialists
             </span>
             <h1 className="font-heading text-5xl font-extrabold leading-[1.1] tracking-tight text-brand md:text-6xl lg:text-7xl">
-              Style your home using what you already have.
+              Home staging to sell or restyling to love the space you're in
             </h1>
             <p className="max-w-xl text-lg leading-relaxed text-muted md:text-xl">
-              Transform your living space without the waste of new furniture. We specialise in restyling what
+              Transform your living space without the expense of new furniture. We specialise in restyling what
               you already own to create a professional, decluttered, and balanced sanctuary—whether
               you&apos;re selling or settling in.
             </p>
@@ -111,7 +111,7 @@ function HomePage() {
                 </div>
                 <div className="surface-high rounded-2xl p-6">
                   <div className="font-heading mb-2 text-3xl font-bold text-brand">0</div>
-                  <div className="text-xs font-medium uppercase tracking-wider text-muted">New items required</div>
+                  <div className="text-xs font-medium uppercase tracking-wider text-muted">Happy clients</div>
                 </div>
               </div>
               <p className="text-sm text-muted">
@@ -136,7 +136,7 @@ function HomePage() {
             <p className="text-lg leading-relaxed text-muted">
               With years of interior styling experience across Wellington and online, I focus on spatial harmony
               and practical restyling—not a push for a new sofa unless it truly helps. Let&apos;s create your
-              curated sanctuary together.
+              sanctuary together.
             </p>
             <div className="pt-2">
               <Link
