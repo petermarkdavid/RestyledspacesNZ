@@ -17,6 +17,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PortfolioIndexRouteImport } from './routes/portfolio/index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio/$slug'
+import { Route as InternalDesignSystemRouteImport } from './routes/internal/design-system'
 import { Route as ApiContactRouteImport } from './routes/api/contact'
 
 const ServicesRoute = ServicesRouteImport.update({
@@ -59,6 +60,11 @@ const PortfolioSlugRoute = PortfolioSlugRouteImport.update({
   path: '/portfolio/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InternalDesignSystemRoute = InternalDesignSystemRouteImport.update({
+  id: '/internal/design-system',
+  path: '/internal/design-system',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiContactRoute = ApiContactRouteImport.update({
   id: '/api/contact',
   path: '/api/contact',
@@ -73,6 +79,7 @@ export interface FileRoutesByFullPath {
   '/reviews': typeof ReviewsRoute
   '/services': typeof ServicesRoute
   '/api/contact': typeof ApiContactRoute
+  '/internal/design-system': typeof InternalDesignSystemRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/portfolio/': typeof PortfolioIndexRoute
 }
@@ -84,6 +91,7 @@ export interface FileRoutesByTo {
   '/reviews': typeof ReviewsRoute
   '/services': typeof ServicesRoute
   '/api/contact': typeof ApiContactRoute
+  '/internal/design-system': typeof InternalDesignSystemRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/portfolio': typeof PortfolioIndexRoute
 }
@@ -96,6 +104,7 @@ export interface FileRoutesById {
   '/reviews': typeof ReviewsRoute
   '/services': typeof ServicesRoute
   '/api/contact': typeof ApiContactRoute
+  '/internal/design-system': typeof InternalDesignSystemRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/portfolio/': typeof PortfolioIndexRoute
 }
@@ -109,6 +118,7 @@ export interface FileRouteTypes {
     | '/reviews'
     | '/services'
     | '/api/contact'
+    | '/internal/design-system'
     | '/portfolio/$slug'
     | '/portfolio/'
   fileRoutesByTo: FileRoutesByTo
@@ -120,6 +130,7 @@ export interface FileRouteTypes {
     | '/reviews'
     | '/services'
     | '/api/contact'
+    | '/internal/design-system'
     | '/portfolio/$slug'
     | '/portfolio'
   id:
@@ -131,6 +142,7 @@ export interface FileRouteTypes {
     | '/reviews'
     | '/services'
     | '/api/contact'
+    | '/internal/design-system'
     | '/portfolio/$slug'
     | '/portfolio/'
   fileRoutesById: FileRoutesById
@@ -143,6 +155,7 @@ export interface RootRouteChildren {
   ReviewsRoute: typeof ReviewsRoute
   ServicesRoute: typeof ServicesRoute
   ApiContactRoute: typeof ApiContactRoute
+  InternalDesignSystemRoute: typeof InternalDesignSystemRoute
   PortfolioSlugRoute: typeof PortfolioSlugRoute
   PortfolioIndexRoute: typeof PortfolioIndexRoute
 }
@@ -205,6 +218,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortfolioSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/internal/design-system': {
+      id: '/internal/design-system'
+      path: '/internal/design-system'
+      fullPath: '/internal/design-system'
+      preLoaderRoute: typeof InternalDesignSystemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/contact': {
       id: '/api/contact'
       path: '/api/contact'
@@ -223,6 +243,7 @@ const rootRouteChildren: RootRouteChildren = {
   ReviewsRoute: ReviewsRoute,
   ServicesRoute: ServicesRoute,
   ApiContactRoute: ApiContactRoute,
+  InternalDesignSystemRoute: InternalDesignSystemRoute,
   PortfolioSlugRoute: PortfolioSlugRoute,
   PortfolioIndexRoute: PortfolioIndexRoute,
 }
