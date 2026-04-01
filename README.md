@@ -1,6 +1,6 @@
 # RestyledspacesNZ
 
-Restyled Spaces NZ — managed website and brand assets.
+Restyled spaces NZ — managed website and brand assets.
 
 - **`website/`** — production app (TanStack Start, Vite, Tailwind). Run `npm install` and `npm run dev` from that folder.
 - **`Assets/`** — source imagery and design references.

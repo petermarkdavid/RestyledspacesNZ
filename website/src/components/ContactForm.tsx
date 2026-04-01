@@ -65,8 +65,13 @@ export function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} className="space-y-10">
-      <fieldset className="card-tonal space-y-4 rounded-2xl p-6">
-        <legend className="font-heading px-1 text-sm font-semibold text-brand">01 — Contact details</legend>
+      <fieldset
+        aria-labelledby="contact-section-contact"
+        className="card-tonal min-w-0 space-y-4 rounded-2xl border-0 p-6"
+      >
+        <h3 id="contact-section-contact" className="font-heading text-sm font-semibold text-brand">
+          01 — Contact details
+        </h3>
         <div className="grid gap-4 sm:grid-cols-2">
           <label className="block text-sm font-medium text-ink">
             Full name
@@ -99,8 +104,13 @@ export function ContactForm() {
         </div>
       </fieldset>
 
-      <fieldset className="card-tonal space-y-4 rounded-2xl p-6">
-        <legend className="font-heading px-1 text-sm font-semibold text-brand">02 — Project details</legend>
+      <fieldset
+        aria-labelledby="contact-section-project"
+        className="card-tonal min-w-0 space-y-4 rounded-2xl border-0 p-6"
+      >
+        <h3 id="contact-section-project" className="font-heading text-sm font-semibold text-brand">
+          02 — Project details
+        </h3>
         <div className="grid gap-6 sm:grid-cols-2">
           <div>
             <p className="text-sm font-medium text-ink">Client type</p>
@@ -156,8 +166,13 @@ export function ContactForm() {
         </label>
       </fieldset>
 
-      <fieldset className="card-tonal space-y-4 rounded-2xl p-6">
-        <legend className="font-heading px-1 text-sm font-semibold text-brand">03 — More context (optional)</legend>
+      <fieldset
+        aria-labelledby="contact-section-context"
+        className="card-tonal min-w-0 space-y-4 rounded-2xl border-0 p-6"
+      >
+        <h3 id="contact-section-context" className="font-heading text-sm font-semibold text-brand">
+          03 — More context (optional)
+        </h3>
         <label className="block text-sm font-medium text-ink">
           Notes
           <textarea

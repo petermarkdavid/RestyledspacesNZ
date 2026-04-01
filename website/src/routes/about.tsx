@@ -8,7 +8,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Meet Julie and learn how Restyled Spaces helps Wellington homeowners stage and style using what they already own.",
+          "Meet Julie and learn how Restyled spaces NZ helps Wellington homeowners stage and style using what they already own.",
       },
     ],
   }),
@@ -20,13 +20,13 @@ function AboutPage() {
     <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:py-20">
       <h1 className="font-heading text-3xl font-bold text-ink sm:text-4xl">About Restyled spaces NZ</h1>
       <p className="mt-4 text-lg text-muted">
-        Restyled Spaces helps homeowners transform their homes using what they already have as a starting
+        Restyled spaces NZ helps homeowners transform their homes using what they already have as a starting
         point—making spaces feel warmer, more functional, and easier to live in or sell.
       </p>
       <div className="card-tonal relative mt-10 aspect-[16/10] overflow-hidden rounded-2xl">
         <img
-          src={publicAsset("/images/julie-styling.jpg")}
-          alt="Julie working on styling a bedroom"
+          src={publicAsset("/images/julie-cushion-fluff-logo-shirt.jpg")}
+          alt="Julie — Restyled spaces NZ"
           className="absolute inset-0 h-full w-full object-cover"
         />
       </div>

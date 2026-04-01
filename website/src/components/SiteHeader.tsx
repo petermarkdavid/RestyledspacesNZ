@@ -26,7 +26,7 @@ export function SiteHeader() {
             className="h-10 w-auto"
             fetchPriority="high"
           />
-          <span className="font-heading text-xl font-bold tracking-tighter text-slate-900">Restyled Spaces</span>
+          <span className="font-heading text-xl font-bold tracking-tighter text-slate-900">Restyled spaces NZ</span>
         </Link>
 
         <nav className="hidden items-center space-x-8 md:flex" aria-label="Primary">

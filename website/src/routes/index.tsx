@@ -3,6 +3,7 @@ import { BeforeAfterSlider } from "#/components/BeforeAfterSlider";
 import { publicAsset } from "#/lib/baseUrl";
 import { caseStudies } from "#/lib/portfolio";
 import { site } from "#/lib/site";
+import { featuredTestimonialAttribution, featuredTestimonialQuote, facebookReviewsSummary } from "#/lib/testimonials";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -75,6 +76,17 @@ function HomePage() {
               See how we breathe new life into rooms using the same pieces you already love.
             </p>
           </div>
+
+          <div className="mb-14 max-w-4xl md:mb-16 lg:mx-auto lg:max-w-5xl">
+            <BeforeAfterSlider
+              beforeSrc={publicAsset("/images/living-room-before.jpg")}
+              afterSrc={publicAsset("/images/living-room-after.jpg")}
+              beforeAlt="Living room before restyling"
+              afterAlt="Living room after restyling"
+              label="Living room transformation"
+            />
+          </div>
+
           <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
             <BeforeAfterSlider
               beforeSrc={publicAsset(featured.beforeSrc)}
@@ -138,17 +150,34 @@ function HomePage() {
           <div className="relative w-full flex-1">
             <div className="aspect-[3/4] overflow-hidden rounded-2xl shadow-2xl grayscale transition-all duration-700 hover:grayscale-0">
               <img
-                src={publicAsset("/images/julie-styling.jpg")}
-                alt="Julie — lead stylist"
+                src={publicAsset("/images/julie-cushion-fluff-logo-shirt.jpg")}
+                alt="Julie — Restyled spaces NZ"
                 className="h-full w-full object-cover"
               />
             </div>
             <div className="absolute -right-4 -bottom-4 z-30 flex h-28 w-28 items-center justify-center rounded-full border-4 border-white bg-tertiary-container p-3 text-center shadow-xl sm:-right-6 sm:-bottom-6 sm:h-32 sm:w-32">
-              <span className="text-[11px] font-bold uppercase tracking-tighter text-on-tertiary-container">
-                Your guide to style
+              <span className="text-[11px] font-bold leading-tight tracking-tight text-on-tertiary-container">
+                Your guide to styling
               </span>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Client voices */}
+      <section className="surface-low px-4 py-16 sm:px-8 md:py-20">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand/80">{facebookReviewsSummary}</p>
+          <blockquote className="font-heading mt-4 text-xl font-semibold leading-snug text-ink sm:text-2xl">
+            &ldquo;{featuredTestimonialQuote}&rdquo;
+          </blockquote>
+          <p className="mt-4 text-sm font-medium text-muted">— {featuredTestimonialAttribution}</p>
+          <Link
+            to="/reviews"
+            className="mt-6 inline-block text-sm font-semibold text-brand hover:underline"
+          >
+            Read all client reviews
+          </Link>
         </div>
       </section>
 
