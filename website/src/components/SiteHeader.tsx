@@ -19,10 +19,10 @@ export function SiteHeader() {
           onClick={() => setMobileOpen(false)}
         >
           <img
-            src={publicAsset("/images/logo.png")}
+            src={publicAsset("/images/translogofinal.png")}
             alt="Restyled spaces NZ"
-            width={140}
-            height={56}
+            width={48}
+            height={44}
             className="h-10 w-auto"
             fetchPriority="high"
           />

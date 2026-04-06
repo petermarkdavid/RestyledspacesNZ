@@ -182,10 +182,6 @@ export function ContactForm() {
             className="input-ghost mt-1 w-full rounded-lg px-3 py-2 text-ink outline-none ring-brand/30 focus:ring-2"
           />
         </label>
-        <p className="text-xs text-muted">
-          Photos: attach when you reply to our confirmation email, or send via your agent—whichever you
-          prefer.
-        </p>
       </fieldset>
 
       {status === "error" && (

@@ -12,14 +12,14 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     id: "janet-quay",
-    name: "Janet Quay",
+    name: "Janet Q",
     detail: "Facebook review",
     quote:
       "Julie is lovely to work with and has great ideas, love what she does.",
   },
   {
     id: "peter-anderton",
-    name: "Peter Anderton",
+    name: "Peter A",
     detail: "Homeowner — preparing for sale",
     quote:
       "Julie from Restyled spaces NZ styled our home for sale and completely transformed it — we almost didn't want to leave! Her expertise was instrumental in selling our property. She just knows how to make a space feel warm, stylish, and welcoming. She is super easy to work with. We can't recommend her enough to anyone looking to style their home or prepare it for sale!",
@@ -37,4 +37,4 @@ export const testimonials: Testimonial[] = [
 export const featuredTestimonialQuote =
   "Julie styled our home for sale and completely transformed it — we almost didn't want to leave. Her expertise was instrumental in selling our property.";
 
-export const featuredTestimonialAttribution = "Peter Anderton";
+export const featuredTestimonialAttribution = "Peter A - Island Bay, Wellington";

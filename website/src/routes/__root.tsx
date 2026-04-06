@@ -3,6 +3,7 @@ import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import { SiteFooter } from "#/components/SiteFooter";
 import { SiteHeader } from "#/components/SiteHeader";
+import { publicAsset } from "#/lib/baseUrl";
 import { site } from "#/lib/site";
 
 import appCss from "../styles.css?url";
@@ -21,6 +22,8 @@ export const Route = createRootRoute({
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0",
       },
+      { rel: "icon", href: publicAsset("/images/translogofinal.png"), type: "image/png" },
+      { rel: "icon", href: publicAsset("/favicon.ico"), sizes: "any" },
       { rel: "canonical", href: site.url },
     ],
   }),
