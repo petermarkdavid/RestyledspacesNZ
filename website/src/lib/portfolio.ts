@@ -21,9 +21,9 @@ export const caseStudies: CaseStudy[] = [
       "Before and after: how we refreshed a Wellington bedroom for sale using existing furniture, calmer layers, and better bed dressing.",
     excerpt:
       "From busy and dated to calm and cohesive—a bedroom that photographs well and feels easier to rest in.",
-    coverSrc: "/images/case-wellington-after.jpg",
-    beforeSrc: "/images/case-wellington-before.png",
-    afterSrc: "/images/case-wellington-after.jpg",
+    coverSrc: "/images/portfolio/case-wellington-after.jpg",
+    beforeSrc: "/images/not-portfolio/case-wellington-before.png",
+    afterSrc: "/images/portfolio/case-wellington-after.jpg",
     problem:
       "The bedroom felt dated and visually busy. Bedding and décor didn’t tell a single story, so the space was harder to photograph and harder for buyers to imagine as their own.",
     approach: [
@@ -42,9 +42,9 @@ export const caseStudies: CaseStudy[] = [
       "A bedroom refresh that coordinated colour and textiles without a full furniture overhaul.",
     excerpt:
       "Cohesive colour, softer layers, and a clearer focal point for a better night's sleep—and better listing photos.",
-    coverSrc: "/images/case-coastal-after.jpg",
-    beforeSrc: "/images/case-coastal-before.jpg",
-    afterSrc: "/images/case-coastal-after.jpg",
+    coverSrc: "/images/portfolio/case-coastal-after.jpg",
+    beforeSrc: "/images/portfolio/case-coastal-before.jpg",
+    afterSrc: "/images/portfolio/case-coastal-after.jpg",
     problem:
       "The bedroom worked hard day-to-day but felt mismatched: window treatments didn’t align, bases showed, and the space lacked a simple visual story.",
     approach: [

@@ -22,24 +22,28 @@ export function BeforeAfterSlider({
   const id = useId();
 
   return (
-    <div className="tonal-shift-bottom group relative overflow-hidden rounded-2xl bg-white shadow-xl">
+    <div className="tonal-shift-bottom group relative mx-auto w-full max-w-[414px] overflow-hidden rounded-2xl bg-white shadow-xl">
       <div className="relative aspect-video">
         {/* After: full frame — same object-fit/position as before so the split aligns */}
         <img
           src={afterSrc}
           alt={afterAlt}
-          className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+          className="absolute inset-0 z-0 h-full w-full object-cover object-center [transform:translateZ(0)]"
+          sizes="414px"
+          decoding="async"
         />
         {/* Before: same full-size image, clipped — does not rescale when the slider moves */}
         <div
-          className="pointer-events-none absolute inset-0 z-[1]"
+          className="pointer-events-none absolute inset-0 z-[1] isolate"
           style={{ clipPath: `inset(0 ${100 - pct}% 0 0)` }}
           aria-hidden
         >
           <img
             src={beforeSrc}
             alt={beforeAlt}
-            className="absolute inset-0 h-full w-full object-cover object-center"
+            className="absolute inset-0 h-full w-full object-cover object-center [transform:translateZ(0)]"
+            sizes="414px"
+            decoding="async"
           />
         </div>
         {/* Gold split line */}

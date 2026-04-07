@@ -1,9 +1,12 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
+import { useEffect, useRef, useState } from "react";
 import { BeforeAfterSlider } from "#/components/BeforeAfterSlider";
 import { publicAsset } from "#/lib/baseUrl";
 import { caseStudies } from "#/lib/portfolio";
 import { site } from "#/lib/site";
-import { featuredTestimonialAttribution, featuredTestimonialQuote, facebookReviewsSummary } from "#/lib/testimonials";
+import { facebookReviewsSummary, testimonials } from "#/lib/testimonials";
+
+const TESTIMONIAL_ROTATE_MS = 8000;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -17,6 +20,43 @@ export const Route = createFileRoute("/")({
 
 function HomePage() {
   const featured = caseStudies[0]!;
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const [rotatePaused, setRotatePaused] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
+  const testimonialBlockRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReducedMotion(mq.matches);
+    const onChange = () => setReducedMotion(mq.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
+  useEffect(() => {
+    const el = testimonialBlockRef.current;
+    if (!el) return;
+    const onFocusIn = () => setRotatePaused(true);
+    const onFocusOut = (e: FocusEvent) => {
+      if (!el.contains(e.relatedTarget as Node)) setRotatePaused(false);
+    };
+    el.addEventListener("focusin", onFocusIn);
+    el.addEventListener("focusout", onFocusOut);
+    return () => {
+      el.removeEventListener("focusin", onFocusIn);
+      el.removeEventListener("focusout", onFocusOut);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (reducedMotion || rotatePaused || testimonials.length < 2) return;
+    const id = window.setInterval(() => {
+      setTestimonialIndex((i) => (i + 1) % testimonials.length);
+    }, TESTIMONIAL_ROTATE_MS);
+    return () => window.clearInterval(id);
+  }, [reducedMotion, rotatePaused]);
+
+  const activeTestimonial = testimonials[testimonialIndex]!;
 
   return (
     <>
@@ -27,12 +67,12 @@ function HomePage() {
             <span className="inline-block rounded-full bg-secondary-fixed px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-on-secondary-fixed">
               Styling and staging specialists
             </span>
-            <h1 className="font-heading text-5xl font-extrabold leading-[1.1] tracking-tight text-brand md:text-6xl lg:text-7xl">
+            <h1 className="font-heading text-[2.4rem] font-extrabold leading-[1.1] tracking-tight text-brand md:text-[3rem] lg:text-[3.6rem]">
               Home staging to sell or restyling to love the space you're in
             </h1>
             <p className="max-w-xl text-lg leading-relaxed text-muted md:text-xl">
-              Transform your living space without the expense of new furniture. We specialise in restyling what
-              you already own to create a professional, decluttered, and balanced sanctuary—whether
+              We love making spaces the best they can be! We specialise in restyling what you already own to
+              create a professional, decluttered, and balanced feel—without the expense of new furniture—whether
               you&apos;re selling or settling in.
             </p>
             <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:pt-4">
@@ -51,12 +91,15 @@ function HomePage() {
             </div>
           </div>
           <div className="relative w-full flex-1">
-            <div className="relative z-20 translate-x-2 translate-y-2 overflow-hidden rounded-2xl shadow-2xl sm:translate-x-4 sm:translate-y-4">
+            {/* Margin offset avoids transform-on-parent blur on the hero photo (WebKit/Chromium) */}
+            <div className="relative z-20 ml-2 mt-2 overflow-hidden rounded-2xl shadow-2xl sm:ml-4 sm:mt-4">
               <img
-                src={publicAsset("/images/hero-living.png")}
+                src={publicAsset("/images/portfolio/hero-living.png")}
                 alt="Warmly styled living room with neutral sofa and natural light"
                 className="aspect-[4/5] w-full object-cover"
                 fetchPriority="high"
+                sizes="(max-width: 1280px) 100vw, 640px"
+                decoding="async"
               />
             </div>
             <div
@@ -68,22 +111,31 @@ function HomePage() {
       </section>
 
       {/* The Magic of Restyling */}
-      <section className="surface-low overflow-hidden px-4 py-16 sm:px-8 md:py-24">
+      <section className="surface-low -mt-[22px] -ml-[6px] overflow-hidden px-8 py-16 sm:px-8 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center md:mb-16 md:text-left">
             <h2 className="font-heading mb-4 text-4xl font-bold text-brand md:text-5xl">The Magic of Restyling</h2>
             <p className="mx-auto max-w-2xl text-lg text-muted md:mx-0">
-              See how we breathe new life into rooms using the same pieces you already love.
+              Working with your existing furnishings, we can help to make your space the best it can be.
             </p>
           </div>
 
-          <div className="mb-14 max-w-4xl md:mb-16 lg:mx-auto lg:max-w-5xl">
+          <div className="mb-14 grid max-w-4xl grid-cols-1 gap-10 md:mb-16 md:gap-12 lg:mx-auto lg:max-w-5xl lg:grid-cols-2 lg:items-start lg:gap-8">
             <BeforeAfterSlider
-              beforeSrc={publicAsset("/images/living-room-before.jpg")}
-              afterSrc={publicAsset("/images/living-room-after.jpg")}
+              beforeSrc={publicAsset("/images/not-portfolio/before2.jpg")}
+              afterSrc={publicAsset("/images/portfolio/living-room-after.jpg")}
               beforeAlt="Living room before restyling"
               afterAlt="Living room after restyling"
               label="Living room transformation"
+            />
+            <BeforeAfterSlider
+              beforeSrc={publicAsset("/images/not-portfolio/before3.jpg")}
+              afterSrc={publicAsset(
+                "/images/portfolio/481254756_582520844742775_3279684030308009448_n-a7b5bb0b-bb77-490d-8fa7-abb31b3e091b.png",
+              )}
+              beforeAlt="Bedroom before restyling"
+              afterAlt="Bedroom with mustard cushions, layered throws, and circular wall art"
+              label="Bedroom restyling"
             />
           </div>
 
@@ -97,11 +149,11 @@ function HomePage() {
             />
             <div className="space-y-6">
               <div className="rounded-2xl bg-surface p-8 tonal-shift-bottom">
-                <h3 className="font-heading mb-4 text-2xl font-bold text-brand">Intentional Arrangement</h3>
+                <h3 className="font-heading mb-4 text-2xl font-bold text-brand">
+                  Wellington home staging &amp; interior restyling services
+                </h3>
                 <p className="leading-relaxed text-muted">
-                  We don&apos;t just move furniture; we create flow. By understanding the bones of your home and
-                  your lifestyle, we curate a space that feels both fresh and familiar—using staging and styling
-                  with what you already have.
+                  We offer stress-free styling solutions tailored to homeowners, renters and real estate agents.
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-4">
@@ -110,15 +162,10 @@ function HomePage() {
                   <div className="text-xs font-medium uppercase tracking-wider text-muted">Rooms transformed</div>
                 </div>
                 <div className="surface-high rounded-2xl p-6">
-                  <div className="font-heading mb-2 text-3xl font-bold text-brand">0</div>
+                  <div className="font-heading mb-2 text-3xl font-bold text-brand">40+</div>
                   <div className="text-xs font-medium uppercase tracking-wider text-muted">Happy clients</div>
                 </div>
               </div>
-              <p className="text-sm text-muted">
-                <Link to={`/portfolio/${featured.slug}`} className="font-semibold text-brand hover:underline">
-                  Open full case study
-                </Link>
-              </p>
             </div>
           </div>
         </div>
@@ -150,7 +197,7 @@ function HomePage() {
           <div className="relative w-full flex-1">
             <div className="aspect-[3/4] overflow-hidden rounded-2xl shadow-2xl grayscale transition-all duration-700 hover:grayscale-0">
               <img
-                src={publicAsset("/images/julie-cushion-fluff-logo-shirt.jpg")}
+                src={publicAsset("/images/not-portfolio/julie-cushion-fluff-logo-shirt.jpg")}
                 alt="Julie — Restyled spaces NZ"
                 className="h-full w-full object-cover"
               />
@@ -166,12 +213,51 @@ function HomePage() {
 
       {/* Client voices */}
       <section className="surface-low px-4 py-16 sm:px-8 md:py-20">
-        <div className="mx-auto max-w-3xl text-center">
+        <div
+          ref={testimonialBlockRef}
+          className="mx-auto max-w-3xl text-center"
+          onMouseEnter={() => setRotatePaused(true)}
+          onMouseLeave={(e) => {
+            if (!e.currentTarget.contains(document.activeElement)) setRotatePaused(false);
+          }}
+        >
           <p className="text-xs font-semibold uppercase tracking-widest text-brand/80">{facebookReviewsSummary}</p>
-          <blockquote className="font-heading mt-4 text-xl font-semibold leading-snug text-ink sm:text-2xl">
-            &ldquo;{featuredTestimonialQuote}&rdquo;
-          </blockquote>
-          <p className="mt-4 text-sm font-medium text-muted">— {featuredTestimonialAttribution}</p>
+          <div
+            className="min-h-[11rem] sm:min-h-[10rem] md:min-h-[9rem]"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            <blockquote
+              key={activeTestimonial.id}
+              className="font-heading mt-4 text-xl font-semibold leading-snug text-ink sm:text-2xl"
+            >
+              &ldquo;{activeTestimonial.quote}&rdquo;
+            </blockquote>
+            <p className="mt-4 text-sm font-medium text-muted">
+              — {activeTestimonial.name} · {activeTestimonial.detail}
+            </p>
+          </div>
+          {testimonials.length > 1 ? (
+            <div
+              className="mt-6 flex justify-center gap-2"
+              role="tablist"
+              aria-label="Choose a testimonial"
+            >
+              {testimonials.map((t, i) => (
+                <button
+                  key={t.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={i === testimonialIndex}
+                  aria-label={`Show review from ${t.name}`}
+                  className={`h-2.5 w-2.5 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-surface-low)] ${
+                    i === testimonialIndex ? "bg-brand" : "bg-line hover:bg-muted"
+                  }`}
+                  onClick={() => setTestimonialIndex(i)}
+                />
+              ))}
+            </div>
+          ) : null}
           <Link
             to="/reviews"
             className="mt-6 inline-block text-sm font-semibold text-brand hover:underline"
@@ -192,7 +278,7 @@ function HomePage() {
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center justify-center rounded-lg bg-surface px-10 py-5 text-xl font-extrabold text-brand shadow-2xl transition hover:bg-secondary-fixed"
+            className="inline-flex items-center justify-center rounded-lg bg-tertiary-container px-10 py-5 text-xl font-extrabold text-on-tertiary-container shadow-2xl transition hover:opacity-90 active:scale-[0.98]"
           >
             Request a Consultation
           </Link>

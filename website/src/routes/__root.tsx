@@ -22,7 +22,7 @@ export const Route = createRootRoute({
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0",
       },
-      { rel: "icon", href: publicAsset("/images/translogofinal.png"), type: "image/png" },
+      { rel: "icon", href: publicAsset("/images/not-portfolio/translogofinal.png"), type: "image/png" },
       { rel: "icon", href: publicAsset("/favicon.ico"), sizes: "any" },
       { rel: "canonical", href: site.url },
     ],

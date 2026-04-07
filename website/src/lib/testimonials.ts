@@ -32,9 +32,3 @@ export const testimonials: Testimonial[] = [
       "I've used Julie quite a few times now and she has always done an awesome job for the client. Julie has a great talent to spot what goes where and what needs to be added or taken away — and as I certainly don't have that skill it's worth its weight in gold. Highly recommend AAA+++",
   },
 ];
-
-/** Short pull-quote for the homepage */
-export const featuredTestimonialQuote =
-  "Julie styled our home for sale and completely transformed it — we almost didn't want to leave. Her expertise was instrumental in selling our property.";
-
-export const featuredTestimonialAttribution = "Peter A - Island Bay, Wellington";

@@ -12,7 +12,8 @@ export const site = {
     linkedin: "https://www.linkedin.com/company/restyled-spaces-nz/",
     googleMaps: "https://maps.app.goo.gl/FxmjZrhmYoxy1ubs8",
     pinterest: "https://nz.pinterest.com/RestyledspacesNZ/",
-    houzz: "https://www.houzz.co.nz/pro/webuser-165842460/",
+    houzz:
+      "https://www.houzz.co.nz/hznb/professionals/home-stylists-and-property-staging/restyled-spaces-nz-pfvwus-pf~1455952908",
   },
 } as const;
 

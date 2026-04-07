@@ -3,30 +3,37 @@ import { useState } from "react";
 import { publicAsset } from "#/lib/baseUrl";
 import { mainNavItems } from "#/lib/site";
 
-const navLinkBase =
-  "font-heading text-sm tracking-tight transition-colors pb-1 border-b-2 border-transparent";
+/** Shared nav styles; active uses yellow bottom border (`border-accent`), inactive uses transparent. */
+const navLinkShared =
+  "font-heading text-sm tracking-tight transition-colors pb-1 border-b-2";
+
+const headerLogoSrc = publicAsset(
+  `/images/not-portfolio/${encodeURIComponent("Heart-shaped house logo design.png")}`,
+);
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 z-50 w-full bg-white/80 shadow-sm backdrop-blur-md transition-all duration-300">
+    <header className="fixed top-0 z-50 w-full bg-white shadow-sm transition-all duration-300">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-8">
         <Link
           to="/"
-          className="flex min-w-0 shrink-0 items-center gap-3"
+          className="relative flex min-w-0 shrink-0 items-center gap-3"
           title="Restyled spaces NZ — Home"
           onClick={() => setMobileOpen(false)}
         >
           <img
-            src={publicAsset("/images/translogofinal.png")}
+            src={headerLogoSrc}
             alt="Restyled spaces NZ"
-            width={48}
-            height={44}
-            className="h-10 w-auto"
+            width={60}
+            height={40}
+            className="h-10 w-auto max-h-10 shrink-0 object-contain"
             fetchPriority="high"
           />
-          <span className="font-heading text-xl font-bold tracking-tighter text-slate-900">Restyled spaces NZ</span>
+          <span className="-ml-[10px] font-heading text-xl font-bold tracking-tighter text-accent subpixel-antialiased">
+            Restyled spaces
+          </span>
         </Link>
 
         <nav className="hidden items-center space-x-8 md:flex" aria-label="Primary">
@@ -35,12 +42,12 @@ export function SiteHeader() {
               key={item.href}
               to={item.href}
               activeOptions={item.href === "/" ? { exact: true } : undefined}
-              className={navLinkBase}
+              className={navLinkShared}
               activeProps={{
-                className: `${navLinkBase} border-slate-900 font-semibold text-slate-900`,
+                className: `${navLinkShared} border-accent font-semibold text-ink`,
               }}
               inactiveProps={{
-                className: `${navLinkBase} font-medium text-slate-500 hover:text-slate-900`,
+                className: `${navLinkShared} border-transparent font-medium text-muted hover:text-ink`,
               }}
             >
               {item.label}
@@ -58,7 +65,7 @@ export function SiteHeader() {
           </Link>
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-slate-700 md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-muted md:hidden"
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav"
             onClick={() => setMobileOpen((o) => !o)}
@@ -72,7 +79,7 @@ export function SiteHeader() {
       {mobileOpen ? (
         <div
           id="mobile-nav"
-          className="border-t border-slate-200/80 bg-white/95 px-4 py-4 shadow-lg backdrop-blur-md md:hidden"
+          className="border-t border-line bg-surface px-4 py-4 shadow-lg md:hidden"
         >
           <nav className="flex flex-col gap-1" aria-label="Mobile primary">
             {mainNavItems.map((item) => (
@@ -80,8 +87,11 @@ export function SiteHeader() {
                 key={item.href}
                 to={item.href}
                 activeOptions={item.href === "/" ? { exact: true } : undefined}
-                className="rounded-lg px-3 py-2.5 font-heading text-sm font-medium text-slate-600 transition hover:bg-slate-50 hover:text-slate-900"
-                activeProps={{ className: "rounded-lg bg-slate-100 px-3 py-2.5 font-heading text-sm font-semibold text-slate-900" }}
+                className="rounded-lg px-3 py-2.5 font-heading text-sm font-medium text-muted transition hover:bg-surface-low hover:text-ink"
+                activeProps={{
+                  className:
+                    "rounded-lg border-l-4 border-accent bg-surface-high py-2.5 pr-3 pl-2.5 font-heading text-sm font-semibold text-ink",
+                }}
                 onClick={() => setMobileOpen(false)}
               >
                 {item.label}

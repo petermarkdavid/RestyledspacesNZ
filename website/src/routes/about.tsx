@@ -25,7 +25,7 @@ function AboutPage() {
       </p>
       <div className="card-tonal relative mt-10 aspect-[16/10] overflow-hidden rounded-2xl">
         <img
-          src={publicAsset("/images/julie-cushion-fluff-logo-shirt.jpg")}
+          src={publicAsset("/images/not-portfolio/julie-cushion-fluff-logo-shirt.jpg")}
           alt="Julie — Restyled spaces NZ"
           className="absolute inset-0 h-full w-full object-cover"
         />

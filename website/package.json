@@ -6,7 +6,9 @@
     "#/*": "./src/*"
   },
   "scripts": {
+    "predev": "node scripts/build-portfolio-gallery.mjs",
     "dev": "vite dev --port 3000",
+    "prebuild": "node scripts/build-portfolio-gallery.mjs",
     "build": "vite build",
     "postbuild": "node scripts/format-shell-html.mjs",
     "preview": "vite preview",

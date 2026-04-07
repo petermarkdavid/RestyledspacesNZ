@@ -42,7 +42,7 @@ function CaseStudyPage() {
       <section className="relative">
         <div className="relative h-[420px] overflow-hidden sm:h-[520px]">
           <img src={publicAsset(c.afterSrc)} alt={`${c.title} hero`} className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,23,100,0.18)_0%,rgba(0,23,100,0.62)_68%,rgba(0,23,100,0.82)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(29,68,205,0.2)_0%,rgba(29,68,205,0.62)_68%,rgba(29,68,205,0.85)_100%)]" />
           <div className="absolute inset-x-0 bottom-0 mx-auto w-full max-w-6xl px-4 pb-10 sm:px-6">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/80">Before and after project</p>
             <h1 className="font-heading mt-3 max-w-xl text-4xl font-bold leading-[1.03] text-white sm:text-6xl">

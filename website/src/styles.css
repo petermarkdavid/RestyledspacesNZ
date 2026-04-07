@@ -3,10 +3,11 @@
 @plugin "@tailwindcss/typography";
 
 @theme inline {
-  --color-brand: #001764;
+  /* Single brand blue — all saturated blue on the site */
+  --color-brand: #1d44cd;
   --color-on-primary: #ffffff;
-  --color-brand-2: #002897;
-  --color-accent: #d4af37;
+  --color-brand-2: #1d44cd;
+  --color-accent: #ecdf15;
   /* Warm neutrals / off-whites (no green cast) */
   --color-page: #f8f5f0;
   --color-surface-low: #f2ede6;
@@ -15,14 +16,15 @@
   --color-ink: #1c1917;
   --color-muted: #45474c;
   --color-line: color-mix(in oklab, #c5c6cd 20%, transparent);
-  --color-chip: #d9e3f9;
-  --color-tertiary-container: #cba72f;
-  --color-on-tertiary-container: #4e3d00;
-  --color-secondary-fixed: #d9e3f9;
-  --color-on-secondary-fixed: #121c2c;
-  --color-primary-fixed: #dde1ff;
-  --color-on-primary-fixed: #001356;
-  --color-primary-fixed-dim: #b9c3ff;
+  /* Light surfaces: tints of brand blue only */
+  --color-chip: color-mix(in oklab, var(--color-brand) 14%, white);
+  --color-tertiary-container: #ecdf15;
+  --color-on-tertiary-container: #1d44cd;
+  --color-secondary-fixed: color-mix(in oklab, var(--color-brand) 14%, white);
+  --color-on-secondary-fixed: #1d44cd;
+  --color-primary-fixed: color-mix(in oklab, var(--color-brand) 12%, white);
+  --color-on-primary-fixed: #1d44cd;
+  --color-primary-fixed-dim: color-mix(in oklab, var(--color-brand) 30%, white);
   --font-sans: "Public Sans", Arial, Helvetica, sans-serif;
   --font-heading: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
 }
@@ -57,8 +59,7 @@ body {
 }
 
 .glass-nav {
-  background: color-mix(in oklab, var(--color-page) 84%, white 16%);
-  backdrop-filter: blur(12px);
+  background: var(--color-surface);
 }
 
 .surface-low {
@@ -75,7 +76,7 @@ body {
 }
 
 .primary-btn {
-  background-image: linear-gradient(135deg, var(--color-brand), var(--color-brand-2));
+  background: var(--color-brand);
   color: #fff;
   border-radius: 0.5rem;
 }
@@ -101,7 +102,7 @@ body {
 }
 
 .tonal-shift-bottom {
-  box-shadow: 0 4px 30px -10px rgba(0, 23, 100, 0.05);
+  box-shadow: 0 4px 30px -10px rgba(29, 68, 205, 0.06);
 }
 
 .tonal-stacking-top {

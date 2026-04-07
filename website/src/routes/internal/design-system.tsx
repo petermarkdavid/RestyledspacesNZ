@@ -13,14 +13,14 @@ export const Route = createFileRoute("/internal/design-system")({
 });
 
 const colors = [
-  { name: "brand", className: "bg-brand", hex: "#001764", textClass: "text-on-primary" },
-  { name: "brand-2", className: "bg-brand-2", hex: "#002897", textClass: "text-on-primary" },
-  { name: "accent (gold)", className: "bg-tertiary-container", hex: "#cba72f", textClass: "text-on-tertiary-container" },
+  { name: "brand (blue)", className: "bg-brand", hex: "#1D44CD", textClass: "text-on-primary" },
+  { name: "brand-2 (= brand)", className: "bg-brand-2", hex: "#1D44CD", textClass: "text-on-primary" },
+  { name: "accent (gold)", className: "bg-tertiary-container", hex: "#ECDF15", textClass: "text-on-tertiary-container" },
   { name: "page", className: "bg-page", hex: "#f8f5f0", textClass: "text-ink" },
   { name: "surface-low", className: "bg-surface-low", hex: "#f2ede6", textClass: "text-ink" },
   { name: "surface-high", className: "bg-surface-high", hex: "#e8e2d9", textClass: "text-ink" },
   { name: "surface", className: "bg-surface", hex: "#ffffff", textClass: "text-ink" },
-  { name: "chip", className: "bg-chip", hex: "#d9e3f9", textClass: "text-ink" },
+  { name: "chip (blue tint)", className: "bg-chip", hex: "mix(brand 14%, white)", textClass: "text-ink" },
   { name: "ink", className: "bg-ink", hex: "#1c1917", textClass: "text-white" },
   { name: "muted", className: "bg-muted", hex: "#45474c", textClass: "text-white" },
 ] as const;
@@ -50,7 +50,8 @@ function DesignSystemPage() {
       <section className="mb-16">
         <h2 className="font-heading text-xl font-bold text-brand">Colour</h2>
         <p className="mt-2 max-w-2xl text-sm text-muted">
-          Core palette from site tokens — warm neutrals with deep navy brand and gold accent.
+          Core palette from site tokens — warm neutrals, brand blue <span className="font-mono">#1D44CD</span> only for
+          saturated blue (tints use the same hue), and gold accent.
         </p>
         <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {colors.map((c) => (
