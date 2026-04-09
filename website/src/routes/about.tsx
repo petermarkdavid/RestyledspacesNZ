@@ -23,7 +23,7 @@ function AboutPage() {
         Restyled spaces NZ helps homeowners transform their homes using what they already have as a starting
         point—making spaces feel warmer, more functional, and easier to live in or sell.
       </p>
-      <div className="card-tonal relative mt-10 aspect-[16/10] overflow-hidden rounded-2xl">
+      <div className="card-tonal relative mt-10 aspect-[16/10] overflow-hidden shadow-xl ring-1 ring-black/5">
         <img
           src={publicAsset("/images/not-portfolio/julie-cushion-fluff-logo-shirt.jpg")}
           alt="Julie — Restyled spaces NZ"
@@ -50,7 +50,7 @@ function AboutPage() {
         to="/contact"
         className="primary-btn mt-10 inline-flex px-6 py-3 text-sm font-semibold shadow-sm transition hover:brightness-110"
       >
-        Request a Consultation
+        Request a consultation
       </Link>
     </div>
   );

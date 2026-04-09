@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ContactForm } from "#/components/ContactForm";
+import { publicAsset } from "#/lib/baseUrl";
 import { site } from "#/lib/site";
 
 export const Route = createFileRoute("/contact")({
@@ -34,6 +35,21 @@ function ContactPage() {
               {site.email}
             </a>
           </p>
+          <p className="mt-2 text-sm text-muted">
+            Mobile:{" "}
+            <a href={`tel:${site.phoneTel}`} className="font-semibold text-brand hover:underline">
+              {site.phone}
+            </a>
+          </p>
+          <div className="card-tonal relative mt-10 aspect-[4/3] max-w-md overflow-hidden shadow-xl ring-1 ring-black/5">
+            <img
+              src={publicAsset("/images/portfolio/living-room-after.jpg")}
+              alt="Living room styled by Restyled spaces NZ"
+              className="absolute inset-0 h-full w-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
           <div className="surface-high mt-10 rounded-2xl p-6">
             <h2 className="font-heading text-sm font-semibold text-brand">What to expect next</h2>
             <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm text-muted">

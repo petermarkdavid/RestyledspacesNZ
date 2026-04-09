@@ -6,6 +6,10 @@ export const site = {
   description:
     "Flexible home staging and styling using what you already have. Occupied homes, practical advice, and consultations across Wellington and online NZ-wide.",
   email: "Julie@Restyledspaces.nz",
+  /** Display format */
+  phone: "+64 21 190 7409",
+  /** For tel: links (no spaces) */
+  phoneTel: "+64211907409",
   social: {
     facebook: "https://www.facebook.com/resyledspacesnz/",
     instagram: "https://www.instagram.com/resyledspacesnz/",

@@ -8,6 +8,8 @@ type Props = {
   /** e.g. “Bedroom transformation” */
   label: string;
   hint?: string;
+  /** Wider slider for homepage feature pairs */
+  size?: "default" | "featured";
 };
 
 export function BeforeAfterSlider({
@@ -17,19 +19,25 @@ export function BeforeAfterSlider({
   afterAlt,
   label,
   hint = "Move slider to see the difference",
+  size = "default",
 }: Props) {
   const [pct, setPct] = useState(50);
   const id = useId();
+  const isFeatured = size === "featured";
 
   return (
-    <div className="tonal-shift-bottom group relative mx-auto w-full max-w-[414px] overflow-hidden rounded-2xl bg-white shadow-xl">
-      <div className="relative aspect-video">
+    <div
+      className={`tonal-shift-bottom group relative mx-auto w-full overflow-hidden rounded-none bg-white shadow-xl ring-1 ring-black/5 ${
+        isFeatured ? "max-w-3xl lg:max-w-none" : "max-w-[414px]"
+      }`}
+    >
+      <div className={`relative ${isFeatured ? "aspect-[16/10] sm:aspect-[16/9]" : "aspect-video"}`}>
         {/* After: full frame — same object-fit/position as before so the split aligns */}
         <img
           src={afterSrc}
           alt={afterAlt}
           className="absolute inset-0 z-0 h-full w-full object-cover object-center [transform:translateZ(0)]"
-          sizes="414px"
+          sizes={isFeatured ? "(min-width: 1024px) 45vw, 100vw" : "414px"}
           decoding="async"
         />
         {/* Before: same full-size image, clipped — does not rescale when the slider moves */}
@@ -42,7 +50,7 @@ export function BeforeAfterSlider({
             src={beforeSrc}
             alt={beforeAlt}
             className="absolute inset-0 h-full w-full object-cover object-center [transform:translateZ(0)]"
-            sizes="414px"
+            sizes={isFeatured ? "(min-width: 1024px) 45vw, 100vw" : "414px"}
             decoding="async"
           />
         </div>
@@ -76,8 +84,8 @@ export function BeforeAfterSlider({
           aria-valuetext={`${pct} percent`}
         />
       </div>
-      <div className="flex items-center justify-between gap-4 bg-surface p-6">
-        <span className="text-sm font-bold uppercase tracking-widest text-brand">{label}</span>
+      <div className="flex items-center justify-between gap-3 bg-surface px-4 py-3 sm:px-5 sm:py-4">
+        <span className="text-sm font-semibold text-brand">{label}</span>
         <span className="text-xs italic text-muted">{hint}</span>
       </div>
     </div>

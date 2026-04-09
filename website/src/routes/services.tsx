@@ -1,4 +1,5 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
+import { publicAsset } from "#/lib/baseUrl";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -24,6 +25,16 @@ function ServicesPage() {
         A flexible, practical service that works with what you already own. We don&apos;t stage completely
         empty homes as a rule, but we can help with select empty rooms alongside your existing pieces.
       </p>
+
+      <div className="card-tonal relative mt-10 aspect-[21/9] max-w-4xl overflow-hidden shadow-xl ring-1 ring-black/5">
+        <img
+          src={publicAsset("/images/portfolio/hero-living.png")}
+          alt="Professionally staged living space"
+          className="absolute inset-0 h-full w-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
 
       <div className="mt-12 grid gap-8 lg:grid-cols-2">
         <article id="sell" className="card-tonal rounded-2xl p-8">
@@ -94,7 +105,7 @@ function ServicesPage() {
           to="/contact"
           className="primary-btn inline-flex px-6 py-3 text-sm font-semibold shadow-sm transition hover:brightness-110"
         >
-          Request a Consultation
+          Request a consultation
         </Link>
       </div>
     </div>

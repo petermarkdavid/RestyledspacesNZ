@@ -195,7 +195,7 @@ export function ContactForm() {
         disabled={status === "loading"}
         className="primary-btn inline-flex items-center justify-center px-8 py-3 text-sm font-semibold shadow-sm transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-70"
       >
-        {status === "loading" ? "Sending…" : "Request a Consultation"}
+        {status === "loading" ? "Sending…" : "Request a consultation"}
       </button>
     </form>
   );

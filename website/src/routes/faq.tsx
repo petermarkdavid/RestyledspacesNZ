@@ -1,4 +1,5 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
+import { publicAsset } from "#/lib/baseUrl";
 
 export const Route = createFileRoute("/faq")({
   head: () => ({
@@ -42,6 +43,15 @@ function FaqPage() {
       <p className="mt-4 text-lg text-muted">
         Quick answers to common questions. Add or edit copy anytime as your process evolves.
       </p>
+      <div className="relative mt-10 aspect-[16/9] overflow-hidden shadow-xl ring-1 ring-line">
+        <img
+          src={publicAsset("/images/portfolio/case-wellington-after.jpg")}
+          alt="Bedroom after home staging"
+          className="absolute inset-0 h-full w-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
       <dl className="mt-12 space-y-10">
         {faqs.map((item) => (
           <div key={item.q}>

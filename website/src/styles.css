@@ -3,28 +3,31 @@
 @plugin "@tailwindcss/typography";
 
 @theme inline {
-  /* Single brand blue — all saturated blue on the site */
-  --color-brand: #1d44cd;
+  /* Primary — clearer blue (less grey than slate) */
+  --color-brand: #3b6ebe;
   --color-on-primary: #ffffff;
-  --color-brand-2: #1d44cd;
-  --color-accent: #ecdf15;
-  /* Warm neutrals / off-whites (no green cast) */
-  --color-page: #f8f5f0;
-  --color-surface-low: #f2ede6;
-  --color-surface-high: #e8e2d9;
+  --color-brand-2: #3b6ebe;
+  /* Gold family: base ~#d2b14c — deeper for nav/stars; lighter tint for fills */
+  --color-accent: #b8941f;
+  /* Spec tertiary — blue-grey (borders, chips, subtle chrome) */
+  --color-tone-tertiary: #94a3b8;
+  /* Neutral + warm gold tints (from #dbc06f / #d2b14c family) */
+  --color-page: #fdfcfa;
+  --color-surface-low: color-mix(in oklab, #dbc06f 9%, #ffffff 91%);
+  --color-surface-high: color-mix(in oklab, #dbc06f 14%, #f8f0e6 86%);
   --color-surface: #ffffff;
-  --color-ink: #1c1917;
-  --color-muted: #45474c;
-  --color-line: color-mix(in oklab, #c5c6cd 20%, transparent);
-  /* Light surfaces: tints of brand blue only */
-  --color-chip: color-mix(in oklab, var(--color-brand) 14%, white);
-  --color-tertiary-container: #ecdf15;
-  --color-on-tertiary-container: #1d44cd;
-  --color-secondary-fixed: color-mix(in oklab, var(--color-brand) 14%, white);
-  --color-on-secondary-fixed: #1d44cd;
-  --color-primary-fixed: color-mix(in oklab, var(--color-brand) 12%, white);
-  --color-on-primary-fixed: #1d44cd;
-  --color-primary-fixed-dim: color-mix(in oklab, var(--color-brand) 30%, white);
+  --color-ink: #1e293b;
+  --color-muted: #64748b;
+  --color-line: color-mix(in oklab, var(--color-tone-tertiary) 32%, transparent);
+  --color-chip: color-mix(in oklab, var(--color-page) 78%, var(--color-tone-tertiary) 22%);
+  /* Secondary fills — lighter gold tint (#dbc06f family) for buttons, slider, nav active */
+  --color-tertiary-container: #dbc06f;
+  --color-on-tertiary-container: #1e293b;
+  --color-secondary-fixed: color-mix(in oklab, #dbc06f 20%, var(--color-page) 80%);
+  --color-on-secondary-fixed: #3b6ebe;
+  --color-primary-fixed: color-mix(in oklab, var(--color-brand) 10%, white);
+  --color-on-primary-fixed: #3b6ebe;
+  --color-primary-fixed-dim: color-mix(in oklab, var(--color-brand) 24%, white);
   --font-sans: "Public Sans", Arial, Helvetica, sans-serif;
   --font-heading: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
 }
@@ -102,11 +105,11 @@ body {
 }
 
 .tonal-shift-bottom {
-  box-shadow: 0 4px 30px -10px rgba(29, 68, 205, 0.06);
+  box-shadow: 0 4px 30px -10px rgba(59, 110, 190, 0.09);
 }
 
 .tonal-stacking-top {
-  border-top: 1px solid rgba(197, 198, 205, 0.1);
+  border-top: 1px solid color-mix(in oklab, var(--color-tone-tertiary) 22%, transparent);
 }
 
 .material-symbols-outlined {
