@@ -18,22 +18,24 @@ export const Route = createFileRoute("/services")({
 function ServicesPage() {
   return (
     <div className="mx-auto max-w-7xl px-5 py-12 sm:px-10 lg:py-16">
-      <h1 className="font-heading text-3xl font-bold text-ink sm:text-4xl">
-        Property staging and home styling services
-      </h1>
-      <p className="mt-4 max-w-3xl text-lg text-muted">
-        A flexible, practical service that works with what you already own. We don&apos;t stage completely
-        empty homes as a rule, but we can help with select empty rooms alongside your existing pieces.
-      </p>
+      <div className="mx-auto w-full max-w-3xl">
+        <h1 className="font-heading text-3xl font-bold text-ink sm:text-4xl">
+          Property staging and home styling services
+        </h1>
+        <p className="mt-4 text-lg text-muted">
+          A flexible, practical service that works with what you already own. We don&apos;t stage completely
+          empty homes as a rule, but we can help with select empty rooms alongside your existing pieces.
+        </p>
 
-      <div className="card-tonal relative mt-10 aspect-[21/9] max-w-4xl overflow-hidden shadow-xl ring-1 ring-black/5">
-        <img
-          src={publicAsset("/images/portfolio/hero-living.png")}
-          alt="Professionally staged living space"
-          className="absolute inset-0 h-full w-full object-cover"
-          loading="lazy"
-          decoding="async"
-        />
+        <div className="card-tonal relative mt-10 aspect-[21/9] overflow-hidden shadow-xl ring-1 ring-black/5">
+          <img
+            src={publicAsset("/images/portfolio/hero-living.png")}
+            alt="Professionally staged living space"
+            className="absolute inset-0 h-full w-full object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
       </div>
 
       <div className="mt-12 grid gap-8 lg:grid-cols-2">
