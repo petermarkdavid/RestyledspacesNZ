@@ -11,8 +11,8 @@ export const site = {
   /** For tel: links (no spaces) */
   phoneTel: "+64211907409",
   social: {
-    facebook: "https://www.facebook.com/resyledspacesnz/",
-    instagram: "https://www.instagram.com/resyledspacesnz/",
+    facebook: "https://www.facebook.com/restyledspacesnz/",
+    instagram: "https://www.instagram.com/restyledspacesnz/",
     linkedin: "https://www.linkedin.com/company/restyled-spaces-nz/",
     googleMaps: "https://maps.app.goo.gl/FxmjZrhmYoxy1ubs8",
     pinterest: "https://nz.pinterest.com/RestyledspacesNZ/",

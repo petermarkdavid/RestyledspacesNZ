@@ -28,7 +28,7 @@ function CaseStudyPage() {
 
   if (!c) {
     return (
-      <div className="mx-auto max-w-3xl px-4 py-20 text-center">
+      <div className="mx-auto max-w-7xl px-5 py-16 text-center sm:px-10">
         <h1 className="font-heading text-2xl font-bold text-ink">Case study not found</h1>
         <Link to="/portfolio" className="mt-6 inline-block font-semibold text-brand hover:underline">
           Back to portfolio
@@ -38,26 +38,22 @@ function CaseStudyPage() {
   }
 
   return (
-    <article className="pb-16">
+    <article className="pb-12">
       <section className="relative">
         <div className="relative h-[420px] overflow-hidden sm:h-[520px]">
           <img src={publicAsset(c.afterSrc)} alt={`${c.title} hero`} className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#1c1917]/88 via-[#1c1917]/35 to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 mx-auto w-full max-w-6xl px-4 pb-10 sm:px-6">
+          <div className="absolute inset-x-0 bottom-0 mx-auto w-full max-w-7xl px-5 pb-10 sm:px-10">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/80">Before and after project</p>
             <h1 className="font-heading mt-3 max-w-xl text-4xl font-bold leading-[1.03] text-white sm:text-6xl">
-              {c.title
-                .replace("bedroom", "Living Room")
-                .replace("Wellington", "Wellington")}
-              <br />
-              Transformation
+              {c.title}
             </h1>
           </div>
         </div>
       </section>
 
       <section className="surface-low">
-        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[1.7fr_1fr]">
+        <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 sm:px-10 lg:grid-cols-[1.7fr_1fr]">
           <div>
             <h2 className="font-heading text-3xl font-bold text-ink">The Challenge</h2>
             <p className="mt-4 max-w-3xl text-base leading-7 text-muted">{c.problem}</p>
@@ -105,7 +101,7 @@ function CaseStudyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+      <section className="mx-auto max-w-7xl px-5 py-12 sm:px-10">
         <div className="flex items-end justify-between gap-4">
           <h2 className="font-heading text-3xl font-bold text-ink">The Visual Journey</h2>
           <p className="text-xs uppercase tracking-wide text-muted">Before / After</p>
@@ -122,7 +118,7 @@ function CaseStudyPage() {
       </section>
 
       <section className="surface-low">
-        <div className="mx-auto max-w-6xl px-4 py-14 text-center sm:px-6">
+        <div className="mx-auto max-w-7xl px-5 py-12 text-center sm:px-10">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand/70">Final insight</p>
           <h2 className="font-heading mt-3 text-4xl font-bold leading-tight text-brand sm:text-5xl">
             Restyling is about the details.

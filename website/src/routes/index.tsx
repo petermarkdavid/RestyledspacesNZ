@@ -147,7 +147,7 @@ function HomePage() {
       </section>
 
       {/* The Magic of Restyling — two featured sliders */}
-      <section className="surface-low overflow-hidden px-5 py-10 sm:px-10 md:py-14">
+      <section className="surface-low overflow-hidden px-5 pt-10 pb-6 sm:px-10 md:pt-12 md:pb-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 text-center md:mb-10 md:text-left">
             <h2 className="font-heading mb-4 text-4xl font-bold text-ink md:text-5xl">The magic of restyling</h2>
@@ -187,8 +187,8 @@ function HomePage() {
       </section>
 
       {/* Meet Julie */}
-      <section className="bg-page px-5 py-16 sm:px-10 md:py-24">
-        <div className="mx-auto flex max-w-7xl flex-col items-center gap-14 md:flex-row-reverse md:gap-20">
+      <section className="bg-page px-5 pt-8 pb-12 sm:px-10 md:pt-10 md:pb-14">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-14 md:flex-row-reverse md:items-start md:gap-20">
           <div className="flex-1 space-y-6">
             <h2 className="font-heading text-4xl font-bold leading-tight text-ink md:text-5xl">Meet Julie</h2>
             <p className="text-lg leading-relaxed text-muted">
@@ -209,7 +209,7 @@ function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="w-full max-w-sm flex-1 md:max-w-xs lg:max-w-sm">
+          <div className="mx-auto w-full max-w-[17rem] shrink-0 sm:max-w-[18rem] md:mx-0 md:max-w-[15rem] lg:max-w-[16rem]">
             <div className="aspect-[3/4] overflow-hidden shadow-xl ring-1 ring-black/5">
               <img
                 src={publicAsset("/images/not-portfolio/julie-cushion-fluff-logo-shirt.jpg")}
@@ -226,7 +226,7 @@ function HomePage() {
       </section>
 
       {/* Client reviews */}
-      <section className="surface-low px-5 py-16 sm:px-10 md:py-20">
+      <section className="surface-low px-5 pt-8 pb-12 sm:px-10 md:pt-10 md:pb-14">
         <div
           ref={testimonialBlockRef}
           className="mx-auto max-w-3xl"
@@ -300,7 +300,7 @@ function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="border-t border-line bg-surface-high px-5 py-10 sm:px-10 md:py-14">
+      <section className="border-t border-line bg-surface-high px-5 pt-10 pb-12 sm:px-10 md:pt-12 md:pb-14">
         <div className="mx-auto max-w-4xl space-y-5 text-center md:space-y-6">
           <h2 className="font-heading text-4xl font-bold tracking-tight text-ink md:text-5xl lg:text-5xl">
             Ready to rediscover your home?

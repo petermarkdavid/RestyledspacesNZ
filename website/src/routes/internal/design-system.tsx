@@ -65,7 +65,7 @@ const designSystemUrlProduction = `${site.url}${designSystemPath}`;
 
 function DesignSystemPage() {
   return (
-    <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:py-20">
+    <div className="mx-auto max-w-7xl px-5 py-12 sm:px-10 lg:py-16">
       <div className="mb-8 rounded-2xl border border-line bg-surface p-6 shadow-sm sm:p-8">
         <p className="text-xs font-semibold uppercase tracking-widest text-brand">Internal reference</p>
         <h1 className="font-heading mt-2 text-3xl font-bold text-ink sm:text-4xl">Design system</h1>

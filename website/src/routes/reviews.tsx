@@ -19,7 +19,7 @@ export const Route = createFileRoute("/reviews")({
 
 function ReviewsPage() {
   return (
-    <div className="mx-auto max-w-6xl px-5 py-14 sm:px-10 lg:py-20">
+    <div className="mx-auto max-w-7xl px-5 py-12 sm:px-10 lg:py-16">
       <h1 className="font-heading text-3xl font-bold text-ink sm:text-4xl">What our clients have to say</h1>
       <p className="mt-4 max-w-3xl text-lg text-muted">
         Real feedback from people we&apos;ve styled for — homeowners preparing to sell and industry partners.

@@ -17,7 +17,8 @@ export const Route = createFileRoute("/about")({
 
 function AboutPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:py-20">
+    <div className="mx-auto max-w-7xl px-5 py-12 sm:px-10 lg:py-16">
+      <div className="mx-auto max-w-3xl">
       <h1 className="font-heading text-3xl font-bold text-ink sm:text-4xl">About Restyled spaces NZ</h1>
       <p className="mt-4 text-lg text-muted">
         Restyled spaces NZ helps homeowners transform their homes using what they already have as a starting
@@ -52,6 +53,7 @@ function AboutPage() {
       >
         Request a consultation
       </Link>
+      </div>
     </div>
   );
 }

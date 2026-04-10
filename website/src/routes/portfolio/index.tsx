@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 import { useEffect, useId, useLayoutEffect, useMemo, useState } from "react";
 import { publicAsset } from "#/lib/baseUrl";
 import {
@@ -8,6 +8,7 @@ import {
   portfolioGalleryImages,
   type GalleryFilterId,
 } from "#/lib/portfolioGallery";
+import { caseStudies } from "#/lib/portfolio";
 import { site } from "#/lib/site";
 
 export const Route = createFileRoute("/portfolio/")({
@@ -67,14 +68,47 @@ function PortfolioPage() {
   );
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:py-20">
-      <section aria-labelledby="portfolio-gallery-heading">
+    <div className="mx-auto max-w-7xl px-5 py-12 sm:px-10 lg:py-16">
+      <section aria-labelledby="portfolio-page-heading">
         <h1
-          id="portfolio-gallery-heading"
+          id="portfolio-page-heading"
           className="font-heading text-3xl font-bold text-ink sm:text-4xl"
         >
           Homes we&apos;ve staged or styled
         </h1>
+        <p className="mt-4 max-w-3xl text-lg text-muted">
+          Each project starts with what you already have. Open a case study to see problem, approach, and outcome—and
+          use the before/after sliders to compare.
+        </p>
+        <ul className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          {caseStudies.map((c) => (
+            <li key={c.slug}>
+              <Link to="/portfolio/$slug" params={{ slug: c.slug }} className="group block">
+                <div className="card-tonal relative aspect-[4/3] overflow-hidden rounded-none shadow-sm ring-1 ring-black/5 transition group-hover:shadow-md group-hover:ring-2 group-hover:ring-brand/35">
+                  <img
+                    src={publicAsset(c.coverSrc)}
+                    alt={c.title}
+                    className="h-full w-full object-cover transition group-hover:scale-[1.02]"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <h2 className="font-heading mt-4 text-xl font-semibold text-brand group-hover:underline">{c.title}</h2>
+                <p className="mt-2 text-sm text-muted">{c.excerpt}</p>
+                <span className="mt-2 inline-block text-sm font-semibold text-brand">View case study →</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mt-12 border-t border-line pt-12" aria-labelledby="portfolio-gallery-heading">
+        <h2
+          id="portfolio-gallery-heading"
+          className="font-heading text-2xl font-bold text-ink sm:text-3xl"
+        >
+          Browse all photos
+        </h2>
         <p className="mt-4 max-w-3xl text-lg text-muted">
           Filter by room type. More on our{" "}
           <a
@@ -117,12 +151,12 @@ function PortfolioPage() {
           })}
         </div>
 
-        <h2
+        <h3
           id={galleryHeadingId}
           className="font-heading mt-8 text-xl font-bold text-ink sm:text-2xl"
         >
           {gallerySectionHeading[galleryFilter]}
-        </h2>
+        </h3>
 
         <div
           id="portfolio-photo-panel"

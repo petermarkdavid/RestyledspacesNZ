@@ -55,6 +55,27 @@ export const caseStudies: CaseStudy[] = [
     outcome:
       "Clients felt the room finally ‘held together’—more restful at home and more confident when buyers walked through.",
   },
+  {
+    slug: "living-room",
+    title: "Living room transformation",
+    seoTitle: "Living room restyling and staging — before and after",
+    seoDescription:
+      "How we opened up a living zone using existing furniture, calmer layout, and stronger focal points for photos and open homes.",
+    excerpt:
+      "From cluttered and closed-in to balanced and inviting—using what was already in the home to support the sale.",
+    coverSrc: "/images/portfolio/living-room-after.jpg",
+    beforeSrc: "/images/not-portfolio/before2.jpg",
+    afterSrc: "/images/portfolio/living-room-after.jpg",
+    problem:
+      "The living area felt heavy and disconnected: seating blocked flow, surfaces were busy, and the room didn’t photograph as the welcoming heart of the home.",
+    approach: [
+      "Reworked the layout so circulation and conversation areas read clearly on camera.",
+      "Edited and grouped décor so colour and texture told one story instead of competing.",
+      "Highlighted natural light and a simple focal point buyers could imagine living with.",
+    ],
+    outcome:
+      "A lighter, more cohesive lounge that felt easier to move through—and showed much stronger in the listing and at open homes.",
+  },
 ];
 
 export function getCaseStudy(slug: string): CaseStudy | undefined {
