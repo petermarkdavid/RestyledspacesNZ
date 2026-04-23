@@ -203,7 +203,7 @@ function DesignSystemPage() {
             theme tokens.
           </li>
           <li>
-            <span className="font-medium text-ink">Copy style</span> — use spaced en dashes ( – ) not em dashes (—).
+            <span className="font-medium text-ink">Copy style</span> — homepage testimonial attributions currently use em dashes (—); keep this punctuation consistent unless the live site copy is updated.
           </li>
         </ul>
       </section>
