@@ -1,4 +1,12 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
+import {
+  FacebookIcon,
+  GoogleMapsIcon,
+  HouzzIcon,
+  InstagramIcon,
+  LinkedinIcon,
+  PinterestIcon,
+} from "#/components/SocialBrandIcons";
 import { site } from "#/lib/site";
 
 export const Route = createFileRoute("/internal/design-system")({
@@ -14,7 +22,6 @@ export const Route = createFileRoute("/internal/design-system")({
 
 const colors = [
   { name: "primary (brand blue)", className: "bg-brand", hex: "#3b6ebe", textClass: "text-on-primary" },
-  { name: "brand-2 (= brand)", className: "bg-brand-2", hex: "#3b6ebe", textClass: "text-on-primary" },
   {
     name: "secondary fill (gold tint)",
     className: "bg-tertiary-container",
@@ -24,6 +31,12 @@ const colors = [
   { name: "accent (deep gold)", className: "bg-accent", hex: "#b8941f", textClass: "text-white" },
   { name: "tertiary (blue-grey)", className: "bg-tone-tertiary", hex: "#94a3b8", textClass: "text-ink" },
   { name: "page (warm neutral)", className: "bg-page", hex: "#fdfcfa", textClass: "text-ink" },
+  {
+    name: "surface-whisper",
+    className: "bg-[color-mix(in_oklab,#dbc06f_3.5%,#ffffff_96.5%)]",
+    hex: "oklab: 3.5% #dbc06f + white — barely-there section bg",
+    textClass: "text-ink",
+  },
   {
     name: "surface-low",
     className: "bg-surface-low",
@@ -134,8 +147,11 @@ function DesignSystemPage() {
         <h2 className="font-heading text-xl font-bold text-ink">Usage (current site)</h2>
         <ul className="mt-4 list-inside list-disc space-y-2 text-sm text-muted">
           <li>
-            <span className="font-medium text-ink">Section headings</span> on key marketing blocks (e.g. home) use{" "}
-            <code className="font-mono text-xs text-ink">text-ink</code> — not brand blue.
+            <span className="font-medium text-ink">Section headings</span> on key marketing blocks use{" "}
+            <code className="font-mono text-xs text-ink">text-ink</code> — not brand blue. Most headings are{" "}
+            <code className="font-mono text-xs text-ink">font-bold</code> or{" "}
+            <code className="font-mono text-xs text-ink">font-semibold</code>; avoid{" "}
+            <code className="font-mono text-xs text-ink">font-extrabold</code> on marketing headings.
           </li>
           <li>
             <span className="font-medium text-ink">Brand blue</span>{" "}
@@ -144,10 +160,16 @@ function DesignSystemPage() {
           </li>
           <li>
             <span className="font-medium text-ink">Secondary gold fill</span>{" "}
-            <code className="font-mono text-xs text-ink">#dbc06f</code> (lighter tint from the{" "}
-            <code className="font-mono text-xs text-ink">#d2b14c</code> family) for secondary buttons, before/after
-            slider, and active nav (
-            <code className="font-mono text-xs text-ink">border-tertiary-container</code>).
+            <code className="font-mono text-xs text-ink">#dbc06f</code> for secondary buttons and active nav (
+            <code className="font-mono text-xs text-ink">border-tertiary-container</code>). The before/after slider
+            handle and divider are now <span className="font-medium text-ink">black</span>, not gold.
+          </li>
+          <li>
+            <span className="font-medium text-ink">Section backgrounds</span> — use{" "}
+            <code className="font-mono text-xs text-ink">surface-whisper</code> for barely-there alternate sections
+            (Magic of Restyling, Reviews, CTA);{" "}
+            <code className="font-mono text-xs text-ink">surface-low</code> / <code className="font-mono text-xs text-ink">surface-high</code>{" "}
+            for stronger tonal emphasis (nested cards, stats).
           </li>
           <li>
             <span className="font-medium text-ink">Deep gold</span>{" "}
@@ -168,10 +190,20 @@ function DesignSystemPage() {
             <code className="font-mono text-xs text-ink">md:translate-y-[10px]</code>) to align with the logo.
           </li>
           <li>
+            <span className="font-medium text-ink">CTA house icon</span> —{" "}
+            <code className="break-all font-mono text-xs text-ink">
+              /images/not-portfolio/Restyled_spaces_square_smaller-…png
+            </code>{" "}
+            used above the "Ready to Restyle" heading at 30% opacity.
+          </li>
+          <li>
             <span className="font-medium text-ink">Home hero</span> — full-bleed photo with warm charcoal gradients and
             soft tint overlays (see <code className="font-mono text-xs text-ink">src/routes/index.tsx</code>); image
             path and <code className="font-mono text-xs text-ink">object-cover</code> + CSS filters are per deploy, not
             theme tokens.
+          </li>
+          <li>
+            <span className="font-medium text-ink">Copy style</span> — use spaced en dashes ( – ) not em dashes (—).
           </li>
         </ul>
       </section>
@@ -181,14 +213,15 @@ function DesignSystemPage() {
         <div className="mt-6 space-y-8 rounded-2xl bg-surface p-6 sm:p-8">
           <div>
             <p className="text-xs font-medium uppercase tracking-wider text-muted">Heading — Plus Jakarta Sans</p>
-            <p className="font-heading mt-2 text-4xl font-extrabold tracking-tight text-ink">Section title (marketing)</p>
+            <p className="font-heading mt-2 text-4xl font-bold tracking-tight text-ink">Section title (marketing)</p>
+            <p className="font-heading mt-2 text-4xl font-semibold tracking-tight text-ink">Section title (lighter weight)</p>
             <p className="font-heading mt-4 text-2xl font-bold text-brand">Inline emphasis / UI label</p>
             <p className="font-heading mt-2 text-sm font-semibold text-muted">Eyebrow / muted label</p>
           </div>
           <div className="tonal-stacking-top pt-8">
             <p className="text-xs font-medium uppercase tracking-wider text-muted">Body — Public Sans</p>
             <p className="mt-2 max-w-prose text-lg leading-relaxed text-muted">
-              We specialise in restyling what you already own — practical staging and styling for Wellington homes
+              We specialise in restyling what you already own – practical staging and styling for Wellington homes
               and online consultations NZ-wide.
             </p>
             <p className="mt-4 text-sm text-ink">
@@ -200,6 +233,10 @@ function DesignSystemPage() {
 
       <section className="mb-16">
         <h2 className="font-heading text-xl font-bold text-ink">Buttons</h2>
+        <p className="mt-2 text-sm text-muted">
+          All buttons use pill shape (<code className="font-mono text-xs text-ink">border-radius: 9999px</code>). On mobile,
+          buttons should be <code className="font-mono text-xs text-ink">max-w-[66vw]</code> and never side-by-side.
+        </p>
         <div className="mt-6 flex flex-wrap gap-4">
           <button type="button" className="primary-btn px-6 py-3 text-sm font-semibold shadow-sm">
             Primary
@@ -211,20 +248,25 @@ function DesignSystemPage() {
             Ghost
           </button>
         </div>
+        <p className="mt-4 text-xs text-muted">Primary CTA label: "Book a consultation" (not "Request a consultation").</p>
       </section>
 
       <section className="mb-16">
         <h2 className="font-heading text-xl font-bold text-ink">Surfaces & cards</h2>
         <div className="mt-6 grid gap-6 md:grid-cols-2">
+          <div className="surface-whisper rounded-2xl p-6 ring-1 ring-line">
+            <p className="font-heading text-sm font-semibold text-ink">surface-whisper</p>
+            <p className="mt-2 text-sm text-muted">Barely-there alternate section backgrounds (homepage Magic, Reviews, CTA).</p>
+          </div>
           <div className="surface-low rounded-2xl p-6">
             <p className="font-heading text-sm font-semibold text-ink">surface-low</p>
-            <p className="mt-2 text-sm text-muted">Section bands and alternating page rhythm.</p>
+            <p className="mt-2 text-sm text-muted">Stronger tonal band for nested emphasis.</p>
           </div>
           <div className="surface-high rounded-2xl p-6">
             <p className="font-heading text-sm font-semibold text-ink">surface-high</p>
-            <p className="mt-2 text-sm text-muted">Nested emphasis inside a low surface.</p>
+            <p className="mt-2 text-sm text-muted">Nested emphasis inside a low surface (e.g. stats card).</p>
           </div>
-          <div className="card-tonal col-span-full rounded-2xl p-6">
+          <div className="card-tonal rounded-2xl p-6">
             <p className="font-heading text-sm font-semibold text-ink">card-tonal</p>
             <p className="mt-2 text-sm text-muted">White card with soft lift shadow — forms and elevated panels.</p>
           </div>
@@ -258,16 +300,39 @@ function DesignSystemPage() {
         </div>
       </section>
 
-      <section className="mb-8">
+      <section className="mb-16">
         <h2 className="font-heading text-xl font-bold text-ink">Iconography</h2>
-        <p className="mt-2 text-sm text-muted">
-          Material Symbols Outlined (loaded globally) — e.g. before/after slider control.
-        </p>
-        <div className="mt-4 flex items-center gap-4 rounded-2xl bg-surface-high px-6 py-4">
-          <span className="material-symbols-outlined text-black" aria-hidden>
-            swap_horiz
-          </span>
-          <span className="text-sm text-ink">swap_horiz</span>
+        <div className="mt-4 space-y-6">
+          <div>
+            <p className="text-sm font-medium text-ink">Material Symbols Outlined — slider control</p>
+            <div className="mt-3 flex items-center gap-4 rounded-2xl bg-surface-high px-6 py-4">
+              <span className="material-symbols-outlined text-black" aria-hidden>
+                swap_horiz
+              </span>
+              <span className="text-sm text-ink">swap_horiz — before/after slider handle (black background)</span>
+            </div>
+          </div>
+          <div>
+            <p className="text-sm font-medium text-ink">Social brand icons — solid filled SVG (black)</p>
+            <p className="mt-1 text-xs text-muted">
+              Defined in <code className="font-mono text-ink">src/components/SocialBrandIcons.tsx</code>. Order in footer: Facebook, Google Maps, Instagram, Houzz, LinkedIn, Pinterest.
+            </p>
+            <div className="mt-3 flex flex-wrap items-center gap-6 rounded-2xl bg-surface px-6 py-5 ring-1 ring-line">
+              {[
+                { Icon: FacebookIcon, label: "Facebook" },
+                { Icon: GoogleMapsIcon, label: "Google Maps" },
+                { Icon: InstagramIcon, label: "Instagram" },
+                { Icon: HouzzIcon, label: "Houzz" },
+                { Icon: LinkedinIcon, label: "LinkedIn" },
+                { Icon: PinterestIcon, label: "Pinterest" },
+              ].map(({ Icon, label }) => (
+                <div key={label} className="flex flex-col items-center gap-2">
+                  <Icon className="h-6 w-6 text-ink" />
+                  <span className="text-xs text-muted">{label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

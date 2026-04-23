@@ -1,75 +1,113 @@
-import type { LucideIcon } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import { ExternalLink, Facebook, Home, Instagram, Linkedin, Mail, MapPin } from "lucide-react";
-import { PinterestIcon } from "#/components/SocialBrandIcons";
+import {
+  FacebookIcon,
+  GoogleMapsIcon,
+  HouzzIcon,
+  InstagramIcon,
+  LinkedinIcon,
+  PinterestIcon,
+} from "#/components/SocialBrandIcons";
 import { publicAsset } from "#/lib/baseUrl";
-import { site, socialLinks } from "#/lib/site";
+import { navItems, site, socialLinks } from "#/lib/site";
 
 const footerLogoSrc = publicAsset("/images/not-portfolio/restyled-spaces-nz-logo-text.png");
 
-const iconBySocialLabel: Partial<Record<(typeof socialLinks)[number]["label"], LucideIcon>> = {
-  Facebook,
-  Instagram,
-  LinkedIn: Linkedin,
-  "Google Maps": MapPin,
-  Houzz: Home,
-};
+type SocialLabel = (typeof socialLinks)[number]["label"];
 
-function SocialIcon({ label, className }: { label: (typeof socialLinks)[number]["label"]; className: string }) {
-  if (label === "Pinterest") {
-    return <PinterestIcon className={className} />;
-  }
-  const Lucide = iconBySocialLabel[label] ?? ExternalLink;
-  return <Lucide className={className} strokeWidth={1.75} aria-hidden />;
+function SocialIcon({ label, className }: { label: SocialLabel; className: string }) {
+  if (label === "Pinterest") return <PinterestIcon className={className} />;
+  if (label === "Facebook") return <FacebookIcon className={className} />;
+  if (label === "Instagram") return <InstagramIcon className={className} />;
+  if (label === "LinkedIn") return <LinkedinIcon className={className} />;
+  if (label === "Google Maps") return <GoogleMapsIcon className={className} />;
+  if (label === "Houzz") return <HouzzIcon className={className} />;
+  return null;
 }
 
 export function SiteFooter() {
   return (
-    <footer className="tonal-stacking-top w-full bg-surface-low py-10">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-10 px-5 sm:px-10 md:grid-cols-2 md:gap-8">
-        <div>
-          <Link to="/" className="inline-flex max-w-full" title={`${site.name} — Home`}>
-            <img
-              src={footerLogoSrc}
-              alt={site.name}
-              width={220}
-              height={44}
-              className="h-10 w-auto max-h-11 max-w-[min(100%,14rem)] object-contain object-left sm:h-11 sm:max-w-[16rem]"
-              loading="lazy"
-              decoding="async"
-            />
-          </Link>
-          <p className="mt-3 text-xs leading-relaxed text-muted">
+    <footer className="tonal-stacking-top w-full bg-white pt-12 pb-8">
+      <div className="mx-auto max-w-7xl px-5 sm:px-10">
+        {/* Main footer grid */}
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-8">
+          {/* Brand */}
+          <div>
+            <Link to="/" className="inline-flex max-w-full" title={`${site.name} — Home`}>
+              <img
+                src={footerLogoSrc}
+                alt={site.name}
+                width={220}
+                height={44}
+                className="h-10 w-auto max-h-11 max-w-[min(100%,14rem)] object-contain object-left sm:h-11 sm:max-w-[16rem]"
+                loading="lazy"
+                decoding="async"
+              />
+            </Link>
+            <div className="mt-4 space-y-1 text-xs text-ink">
+              <p>
+                <a
+                  href={`tel:${site.phoneTel}`}
+                  className="hover:underline"
+                >
+                  {site.phone}
+                </a>
+              </p>
+              <p>
+                <a
+                  href={`mailto:${site.email}`}
+                  className="hover:underline"
+                >
+                  {site.email}
+                </a>
+              </p>
+            </div>
+          </div>
+
+          {/* Nav links */}
+          <nav aria-label="Footer navigation">
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-2">
+              {navItems.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    to={item.href}
+                    className="font-heading text-sm font-medium text-ink transition hover:opacity-70"
+                    activeProps={{ className: "font-heading text-sm font-semibold text-ink" }}
+                    activeOptions={item.href === "/" ? { exact: true } : undefined}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Social icons */}
+          <nav aria-label="Social links">
+            <ul className="flex flex-wrap gap-4">
+              {socialLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={link.label}
+                    className="inline-flex items-center justify-center text-ink transition hover:opacity-60"
+                  >
+                    <SocialIcon label={link.label} className="h-5 w-5" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="mt-10 border-t border-line pt-5 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-xs text-ink">
             Copyright© 2021 Restyled spaces NZ, All Rights Reserved.
           </p>
-          <p className="mt-3 text-xs text-muted">Web design by Ander Studio</p>
+          <p className="text-xs text-ink">Web design by Ander Studio</p>
         </div>
-        <nav aria-label="Social and contact links" className="w-full md:justify-self-start">
-          <ul className="grid w-full grid-cols-2 justify-items-start gap-x-6 gap-y-2.5 sm:grid-cols-3 sm:gap-x-5 sm:gap-y-3">
-            {socialLinks.map((link) => (
-              <li key={link.href} className="min-w-0">
-                <a
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex w-full min-w-0 items-center gap-2.5 py-1.5 text-sm font-medium text-ink underline-offset-4 transition-colors hover:text-brand hover:underline"
-                >
-                  <SocialIcon label={link.label} className="h-4 w-4 shrink-0 text-ink opacity-90" />
-                  <span>{link.label}</span>
-                </a>
-              </li>
-            ))}
-            <li className="min-w-0">
-              <a
-                href={`mailto:${site.email}`}
-                className="inline-flex w-full min-w-0 items-center gap-2.5 py-1.5 text-sm font-medium text-ink underline-offset-4 transition-colors hover:text-brand hover:underline"
-              >
-                <Mail className="h-4 w-4 shrink-0 text-ink opacity-90" strokeWidth={1.75} aria-hidden />
-                <span>Email</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
       </div>
     </footer>
   );

@@ -81,18 +81,22 @@ body {
 .primary-btn {
   background: var(--color-brand);
   color: #fff;
-  border-radius: 0.5rem;
+  border-radius: 9999px;
 }
 
 .secondary-btn {
   background: var(--color-tertiary-container);
   color: var(--color-on-tertiary-container);
-  border-radius: 0.5rem;
+  border-radius: 9999px;
 }
 
 .ghost-btn {
   color: var(--color-brand);
-  border-radius: 0.5rem;
+  border-radius: 9999px;
+}
+
+.surface-whisper {
+  background: color-mix(in oklab, #dbc06f 3.5%, #ffffff 96.5%);
 }
 
 .ghost-btn:hover {
