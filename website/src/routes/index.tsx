@@ -223,6 +223,7 @@ function HomePage() {
 
       {/* Client reviews */}
       <section className="surface-whisper px-5 pt-16 pb-12 sm:px-10 md:pt-20 md:pb-14">
+        <h2 className="sr-only">Client reviews</h2>
         <div
           ref={testimonialBlockRef}
           className="mx-auto max-w-3xl"
