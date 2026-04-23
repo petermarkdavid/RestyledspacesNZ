@@ -296,7 +296,6 @@ function HomePage() {
           <img
             src={publicAsset("/images/not-portfolio/Restyled_spaces_square_smaller-302aff67-57ab-4d94-8fa0-e0952fd1ad32.png")}
             alt=""
-            aria-hidden
             className="mx-auto mb-2 h-12 w-12 object-contain opacity-30"
           />
           <h2 className="font-heading text-4xl font-semibold tracking-tight text-ink md:text-5xl lg:text-5xl">
