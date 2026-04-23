@@ -15,13 +15,22 @@ const footerLogoSrc = publicAsset("/images/not-portfolio/restyled-spaces-nz-logo
 type SocialLabel = (typeof socialLinks)[number]["label"];
 
 function SocialIcon({ label, className }: { label: SocialLabel; className: string }) {
-  if (label === "Pinterest") return <PinterestIcon className={className} />;
-  if (label === "Facebook") return <FacebookIcon className={className} />;
-  if (label === "Instagram") return <InstagramIcon className={className} />;
-  if (label === "LinkedIn") return <LinkedinIcon className={className} />;
-  if (label === "Google Maps") return <GoogleMapsIcon className={className} />;
-  if (label === "Houzz") return <HouzzIcon className={className} />;
-  return null;
+  switch (label) {
+    case "Pinterest":
+      return <PinterestIcon className={className} />;
+    case "Facebook":
+      return <FacebookIcon className={className} />;
+    case "Instagram":
+      return <InstagramIcon className={className} />;
+    case "LinkedIn":
+      return <LinkedinIcon className={className} />;
+    case "Google Maps":
+      return <GoogleMapsIcon className={className} />;
+    case "Houzz":
+      return <HouzzIcon className={className} />;
+    default:
+      throw new Error(`Unsupported social icon label: ${label}`);
+  }
 }
 
 export function SiteFooter() {
