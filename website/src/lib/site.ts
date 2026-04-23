@@ -23,11 +23,11 @@ export const site = {
 
 export const socialLinks = [
   { label: "Facebook", href: site.social.facebook },
-  { label: "Instagram", href: site.social.instagram },
-  { label: "LinkedIn", href: site.social.linkedin },
   { label: "Google Maps", href: site.social.googleMaps },
-  { label: "Pinterest", href: site.social.pinterest },
+  { label: "Instagram", href: site.social.instagram },
   { label: "Houzz", href: site.social.houzz },
+  { label: "LinkedIn", href: site.social.linkedin },
+  { label: "Pinterest", href: site.social.pinterest },
 ] as const;
 
 /** Primary nav (header); contact is the header CTA only. */

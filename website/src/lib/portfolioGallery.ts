@@ -149,6 +149,11 @@ export const portfolioGalleryImages: readonly PortfolioGalleryImage[] = [
     categories: ["bathrooms"] as const,
   },
   {
+    src: "/images/portfolio/144 Owhiro Bay Parade, Owhiro Bay 0285.jpg",
+    alt: "Interior styling — 144 Owhiro Bay Parade, Owhiro Bay 0285",
+    categories: [] as const,
+  },
+  {
     src: "/images/portfolio/469071017_552551420887185_764143705973240489_n-67c18f80-31f7-4175-82d5-3fb28b890a0e.png",
     alt: "Bedroom with navy accent wall, sunburst mirror, and layered bedding",
     categories: ["bedrooms"] as const,
