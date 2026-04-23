@@ -222,7 +222,10 @@ function HomePage() {
       </section>
 
       {/* Client reviews */}
-      <section className="surface-whisper px-5 pt-16 pb-12 sm:px-10 md:pt-20 md:pb-14">
+      <section
+        className="surface-whisper px-5 pt-16 pb-12 sm:px-10 md:pt-20 md:pb-14"
+        style={{ ["--color-surface-low" as string]: "var(--color-surface-whisper)" }}
+      >
         <h2 className="sr-only">Client reviews</h2>
         <div
           ref={testimonialBlockRef}
