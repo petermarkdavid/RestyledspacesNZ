@@ -33,10 +33,11 @@ export const socialLinks = [
 /** Primary nav (header); contact is the header CTA only. */
 export const mainNavItems = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
+  { href: "/home-staging", label: "Home Staging" },
+  { href: "/home-styling", label: "Home Styling" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/reviews", label: "Reviews" },
+  { href: "/about", label: "About" },
   { href: "/faq", label: "FAQ" },
 ] as const;
 

@@ -11,6 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as HomeStylingRouteImport } from './routes/home-styling'
+import { Route as HomeStagingRouteImport } from './routes/home-staging'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
@@ -28,6 +30,16 @@ const ServicesRoute = ServicesRouteImport.update({
 const ReviewsRoute = ReviewsRouteImport.update({
   id: '/reviews',
   path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomeStylingRoute = HomeStylingRouteImport.update({
+  id: '/home-styling',
+  path: '/home-styling',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomeStagingRoute = HomeStagingRouteImport.update({
+  id: '/home-staging',
+  path: '/home-staging',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqRoute = FaqRouteImport.update({
@@ -76,6 +88,8 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/home-staging': typeof HomeStagingRoute
+  '/home-styling': typeof HomeStylingRoute
   '/reviews': typeof ReviewsRoute
   '/services': typeof ServicesRoute
   '/api/contact': typeof ApiContactRoute
@@ -88,6 +102,8 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/home-staging': typeof HomeStagingRoute
+  '/home-styling': typeof HomeStylingRoute
   '/reviews': typeof ReviewsRoute
   '/services': typeof ServicesRoute
   '/api/contact': typeof ApiContactRoute
@@ -101,6 +117,8 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/home-staging': typeof HomeStagingRoute
+  '/home-styling': typeof HomeStylingRoute
   '/reviews': typeof ReviewsRoute
   '/services': typeof ServicesRoute
   '/api/contact': typeof ApiContactRoute
@@ -115,6 +133,8 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/faq'
+    | '/home-staging'
+    | '/home-styling'
     | '/reviews'
     | '/services'
     | '/api/contact'
@@ -127,6 +147,8 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/faq'
+    | '/home-staging'
+    | '/home-styling'
     | '/reviews'
     | '/services'
     | '/api/contact'
@@ -139,6 +161,8 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/faq'
+    | '/home-staging'
+    | '/home-styling'
     | '/reviews'
     | '/services'
     | '/api/contact'
@@ -152,6 +176,8 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
+  HomeStagingRoute: typeof HomeStagingRoute
+  HomeStylingRoute: typeof HomeStylingRoute
   ReviewsRoute: typeof ReviewsRoute
   ServicesRoute: typeof ServicesRoute
   ApiContactRoute: typeof ApiContactRoute
@@ -174,6 +200,20 @@ declare module '@tanstack/react-router' {
       path: '/reviews'
       fullPath: '/reviews'
       preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/home-styling': {
+      id: '/home-styling'
+      path: '/home-styling'
+      fullPath: '/home-styling'
+      preLoaderRoute: typeof HomeStylingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/home-staging': {
+      id: '/home-staging'
+      path: '/home-staging'
+      fullPath: '/home-staging'
+      preLoaderRoute: typeof HomeStagingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faq': {
@@ -240,6 +280,8 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
+  HomeStagingRoute: HomeStagingRoute,
+  HomeStylingRoute: HomeStylingRoute,
   ReviewsRoute: ReviewsRoute,
   ServicesRoute: ServicesRoute,
   ApiContactRoute: ApiContactRoute,

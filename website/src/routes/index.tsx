@@ -117,19 +117,24 @@ function HomePage() {
         <div className="pointer-events-none absolute inset-0 bg-[rgba(183,110,93,0.08)] mix-blend-soft-light" aria-hidden />
         <div className="relative z-10 mx-auto flex min-h-[min(62vh,600px)] max-w-7xl flex-col justify-center px-5 py-14 sm:min-h-[min(66vh,640px)] sm:px-10 sm:py-16 md:py-20">
           <h1 className="font-heading mt-5 max-w-3xl text-[2.25rem] font-bold leading-[1.12] tracking-tight text-[#fdfcfb] sm:text-[2.75rem] md:text-[3.25rem] lg:text-[3.5rem]">
-            Home staging to sell or restyling to love the space you&apos;re in
+            Home Staging &amp; Home Styling in New Zealand
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#fdfcfb]/92 md:text-xl">
-            We love making spaces the best they can be! We specialise in restyling what you already own to
-            create a professional, decluttered, and balanced feel – without the expense of new furniture –
-            whether you&apos;re selling or settling in.
+            Helping homeowners prepare for sale or create a home they love living in.
           </p>
-          <div className="mt-10">
+          <div className="mt-10 flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-0">
             <Link
-              to="/contact"
-              className="primary-btn inline-flex items-center justify-center px-7 py-3 text-base font-semibold shadow-lg transition hover:opacity-90 max-w-[66vw] sm:max-w-none"
+              to="/home-staging"
+              className="inline-flex items-center gap-2 py-2 text-base font-semibold text-[#fdfcfb] transition hover:opacity-80 sm:py-3"
             >
-              Book a consultation
+              Selling My Home <span aria-hidden="true">→</span>
+            </Link>
+            <span className="hidden h-5 w-px bg-[#fdfcfb]/35 sm:mx-6 sm:block" aria-hidden="true" />
+            <Link
+              to="/home-styling"
+              className="inline-flex items-center gap-2 py-2 text-base font-semibold text-[#fdfcfb] transition hover:opacity-80 sm:py-3"
+            >
+              Refreshing My Home <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>
@@ -178,6 +183,41 @@ function HomePage() {
             >
               See more Restyled homes
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Two Service Paths */}
+      <section className="bg-page px-5 pt-16 pb-12 sm:px-10 md:pt-20 md:pb-14">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="surface-high rounded-2xl p-8">
+              <h2 className="font-heading text-xl font-bold text-brand">Preparing to sell?</h2>
+              <p className="mt-3 text-muted">
+                Property styling and home staging designed to help your home stand out and attract buyers.
+                We work with your existing furniture to create spaces that photograph beautifully and feel
+                easy for buyers to imagine living in.
+              </p>
+              <Link
+                to="/home-staging"
+                className="mt-6 inline-flex items-center font-semibold text-brand hover:underline"
+              >
+                Explore home staging →
+              </Link>
+            </div>
+            <div className="surface-high rounded-2xl p-8">
+              <h2 className="font-heading text-xl font-bold text-brand">Love your home but need a refresh?</h2>
+              <p className="mt-3 text-muted">
+                Home styling, colour advice, and practical design guidance for real homes. Whether you&apos;re
+                settling in, downsizing, or just ready for a change — we can help you love the space you&apos;re in.
+              </p>
+              <Link
+                to="/home-styling"
+                className="mt-6 inline-flex items-center font-semibold text-brand hover:underline"
+              >
+                Explore home styling →
+              </Link>
+            </div>
           </div>
         </div>
       </section>

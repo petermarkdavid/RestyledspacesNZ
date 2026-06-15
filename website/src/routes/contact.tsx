@@ -41,6 +41,16 @@ function ContactPage() {
               {site.phone}
             </a>
           </p>
+          <div className="surface-high mt-8 rounded-2xl p-6">
+            <h2 className="font-heading text-sm font-semibold text-brand">Areas serviced</h2>
+            <p className="mt-2 text-sm text-muted">
+              In-person consultations across the Wellington region — Wellington city, the Hutt Valley,
+              Porirua, and Kāpiti Coast.
+            </p>
+            <p className="mt-2 text-sm text-muted">
+              Online consultations available NZ-wide and internationally.
+            </p>
+          </div>
           <div className="card-tonal relative mt-10 aspect-[4/3] max-w-md overflow-hidden shadow-xl ring-1 ring-black/5">
             <img
               src={publicAsset("/images/portfolio/living-room-after.jpg")}
